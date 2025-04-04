@@ -1,0 +1,48 @@
+
+running 1 test
+------------------------------------
+setup for size 1<<11=2048
+time to setup powers = 2.954453207s
+Time to generate SRS for size 11 =  16 secs
+test ramlookup::cq::tests::test_setup has been running for over 60 seconds
+Group FFT for 12 took 68s
+Field FFT for 12 took 0 s
+Group INV FFT for 12 took 72s
+Computed h polynomial in time: 153s
+Computed DFT in time: 23s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 11 =  233 secs
+Group FFT for 12 took 54s
+Field FFT for 12 took 0 s
+Group INV FFT for 12 took 64s
+Computed h polynomial in time: 129s
+Computed DFT in time: 23s
+Computed Batch Normalization in time: 0s
+Time to generate table 0..N inputs for size 11 =  154 secs
+------------------------------------
+setup for size 1<<12=4096
+time to load powers = 46.353585ms
+Time to generate SRS for size 12 =  2 secs
+Group FFT for 13 took 137s
+Field FFT for 13 took 0 s
+Group INV FFT for 13 took 166s
+Computed h polynomial in time: 329s
+Computed DFT in time: 52s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 12 =  502 secs
+Group FFT for 13 took 115s
+Field FFT for 13 took 0 s
+Group INV FFT for 13 took 137s
+Computed h polynomial in time: 274s
+Computed DFT in time: 51s
+Computed Batch Normalization in time: 0s
+Time to generate table 0..N inputs for size 12 =  328 secs
+test ramlookup::cq::tests::test_setup ... ok
+
+successes:
+
+successes:
+    ramlookup::cq::tests::test_setup
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 34 filtered out; finished in 1238.16s
+

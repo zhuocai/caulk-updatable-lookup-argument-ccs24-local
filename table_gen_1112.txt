@@ -1,0 +1,44 @@
+
+running 1 test
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+test ramlookup::cq::tests::test_table_gen has been running for over 60 seconds
+waiting for PP and CqPP to be generated
+CQ parameters already exist. Will start generating table params in 6 secs
+time to load powers = 3.34202ms
+Group FFT for 12 took 5s
+Field FFT for 12 took 0 s
+Group INV FFT for 12 took 6s
+Computed h polynomial in time: 12s
+Computed DFT in time: 2s
+Computed Batch Normalization in time: 0s
+Generated table specific parameters in 14 secs
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+waiting for PP and CqPP to be generated
+CQ parameters already exist. Will start generating table params in 6 secs
+time to load powers = 6.484655ms
+Group FFT for 13 took 10s
+Field FFT for 13 took 0 s
+Group INV FFT for 13 took 12s
+Computed h polynomial in time: 25s
+Computed DFT in time: 4s
+Computed Batch Normalization in time: 0s
+Generated table specific parameters in 30 secs
+test ramlookup::cq::tests::test_table_gen ... ok
+
+successes:
+
+successes:
+    ramlookup::cq::tests::test_table_gen
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 34 filtered out; finished in 898.14s
+

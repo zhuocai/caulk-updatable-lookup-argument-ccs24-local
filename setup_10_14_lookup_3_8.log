@@ -1,0 +1,54 @@
+
+running 1 test
+N=1024
+time to load powers = 19.796336ms
+time for setup of size 1024 = [21.430917ms]
+Group FFT for 11 took 56
+Field FFT for 11 took 0
+test multi::tests::test_multiple_lookups has been running for over 60 seconds
+Group INV FFT for 11 took 70
+Computed h polynomial in time: 139
+Computed DFT in time: 23
+Computed Batch Normalization in time: 0
+Time to generate openings = 162.880590661s
+Time to generate poly and openings for size 1023 = [163.2475328s]
+m=9
+Time to generate aux domain /470.637µs/
+Time to generate inputs = 353.557772ms
+Time to generate lookup proof if size 9 for = [1.281315471s]
+Time to verify lookup proof of size 9 for  = [285.501553ms]
+Lookup test succeeded
+m=17
+Time to generate aux domain /1.547767ms/
+Time to generate inputs = 377.045495ms
+Time to generate lookup proof if size 17 for = [2.236533794s]
+Time to verify lookup proof of size 17 for  = [226.252845ms]
+Lookup test succeeded
+N=2048
+time to load powers = 23.772229ms
+time for setup of size 2048 = [24.843944ms]
+Group FFT for 12 took 122
+Field FFT for 12 took 0
+Group INV FFT for 12 took 164
+Computed h polynomial in time: 313
+Computed DFT in time: 59
+Computed Batch Normalization in time: 0
+Time to generate openings = 373.198412309s
+Time to generate poly and openings for size 2047 = [373.81432348s]
+m=9
+Time to generate aux domain /489.856µs/
+Time to generate inputs = 632.897498ms
+Time to generate lookup proof if size 9 for = [1.339949935s]
+Time to verify lookup proof of size 9 for  = [230.58501ms]
+Lookup test succeeded
+m=17
+Time to generate aux domain /1.513785ms/
+Time to generate inputs = 643.663433ms
+Time to generate lookup proof if size 17 for = [2.15654891s]
+Time to verify lookup proof of size 17 for  = [226.102782ms]
+Lookup test succeeded
+N=4096
+time to load powers = 44.231613ms
+time for setup of size 4096 = [45.363247ms]
+Group FFT for 13 took 269
+Field FFT for 13 took 0

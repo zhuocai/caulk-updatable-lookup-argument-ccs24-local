@@ -1,0 +1,27 @@
+
+running 1 test
+------------------------------------
+setup for size 1<<18=262144
+test ramlookup::cq::tests::test_setup has been running for over 60 seconds
+time to setup powers = 220.737724327s
+Time to generate SRS for size 18 =  1664 secs
+Group FFT for 19 took 10904s
+Field FFT for 19 took 39 s
+Group INV FFT for 19 took 12536s
+Computed h polynomial in time: 24779s
+Computed DFT in time: 5128s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 18 =  41078 secs
+Group FFT for 19 took 11068s
+Field FFT for 19 took 40 s
+Group INV FFT for 19 took 12440s
+Computed h polynomial in time: 24839s
+Computed DFT in time: 5147s
+Computed Batch Normalization in time: 0s
+Time to generate table 0..N inputs for size 18 =  30088 secs
+------------------------------------
+setup for size 1<<19=524288
+time to setup powers = 369.260612965s
+Time to generate SRS for size 19 =  3042 secs
+Group FFT for 20 took 23979s
+Field FFT for 20 took 90 s

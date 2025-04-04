@@ -1,0 +1,102 @@
+
+running 1 test
+------------------------------------
+setup for size 1<<13=8192
+time to setup powers = 1.15519266s
+Time to generate SRS for size 13 =  6 secs
+Group FFT for 14 took 21s
+Field FFT for 14 took 0 s
+test ramlookup::cq::tests::test_setup has been running for over 60 seconds
+Group INV FFT for 14 took 25s
+Computed h polynomial in time: 51s
+Computed DFT in time: 9s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 13 =  83 secs
+Group FFT for 14 took 21s
+Field FFT for 14 took 0 s
+Group INV FFT for 14 took 25s
+Computed h polynomial in time: 51s
+Computed DFT in time: 9s
+Computed Batch Normalization in time: 0s
+Time to generate table inputs for size 13 =  61 secs
+------------------------------------
+setup for size 1<<14=16384
+time to setup powers = 1.976134652s
+Time to generate SRS for size 14 =  13 secs
+Group FFT for 15 took 47s
+Field FFT for 15 took 0 s
+Group INV FFT for 15 took 55s
+Computed h polynomial in time: 110s
+Computed DFT in time: 21s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 14 =  179 secs
+Group FFT for 15 took 46s
+Field FFT for 15 took 0 s
+Group INV FFT for 15 took 55s
+Computed h polynomial in time: 109s
+Computed DFT in time: 21s
+Computed Batch Normalization in time: 0s
+Time to generate table inputs for size 14 =  132 secs
+------------------------------------
+setup for size 1<<15=32768
+time to setup powers = 3.685388441s
+Time to generate SRS for size 15 =  26 secs
+Group FFT for 16 took 109s
+Field FFT for 16 took 0 s
+Group INV FFT for 16 took 129s
+Computed h polynomial in time: 254s
+Computed DFT in time: 55s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 15 =  420 secs
+Group FFT for 16 took 131s
+Field FFT for 16 took 0 s
+Group INV FFT for 16 took 176s
+Computed h polynomial in time: 325s
+Computed DFT in time: 55s
+Computed Batch Normalization in time: 0s
+Time to generate table inputs for size 15 =  385 secs
+------------------------------------
+setup for size 1<<16=65536
+time to setup powers = 7.344791392s
+Time to generate SRS for size 16 =  55 secs
+Group FFT for 17 took 225s
+Field FFT for 17 took 0 s
+Group INV FFT for 17 took 312s
+Computed h polynomial in time: 570s
+Computed DFT in time: 105s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 16 =  903 secs
+Group FFT for 17 took 276s
+Field FFT for 17 took 0 s
+Group INV FFT for 17 took 288s
+Computed h polynomial in time: 599s
+Computed DFT in time: 107s
+Computed Batch Normalization in time: 0s
+Time to generate table inputs for size 16 =  712 secs
+------------------------------------
+setup for size 1<<17=131072
+time to setup powers = 14.478369027s
+Time to generate SRS for size 17 =  106 secs
+Group FFT for 18 took 855s
+Field FFT for 18 took 1 s
+Group INV FFT for 18 took 557s
+Computed h polynomial in time: 1474s
+Computed DFT in time: 217s
+Computed Batch Normalization in time: 0s
+Time to generate CQ setup for size 17 =  2888 secs
+Group FFT for 18 took 467s
+Field FFT for 18 took 1 s
+Group INV FFT for 18 took 595s
+Computed h polynomial in time: 1126s
+Computed DFT in time: 227s
+Computed Batch Normalization in time: 0s
+Time to generate table inputs for size 17 =  1362 secs
+test ramlookup::cq::tests::test_setup ... ok
+
+successes:
+
+successes:
+    ramlookup::cq::tests::test_setup
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 32 filtered out; finished in 7339.00s
+
