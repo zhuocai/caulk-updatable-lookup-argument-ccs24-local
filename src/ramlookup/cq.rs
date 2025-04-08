@@ -1771,7 +1771,10 @@ mod tests {
                 let timer = Instant::now();
                 let table_pp =
                     generate_cq_table_input(&base_table, &pp, log_table_sizes[j], false, false);
-                println!("===> Table init of table={table_size} and batch={batch_size} took {} seconds", timer.elapsed().as_secs_f64());
+                println!(
+                    "===> Table init of table={table_size} and batch={batch_size} took {} seconds",
+                    timer.elapsed().as_secs_f64()
+                );
             }
         }
     }
@@ -1828,13 +1831,14 @@ mod tests {
                 .into_affine(); // it is wrong, I should use pp.open_z_h_poly (Li). but same efficiency for benchmark
 
                 // now start delta lookup
-                let lookup_num = (table_size as f64)
-                    .sqrt()
-                    .div((batch_size as f64).sqrt())
-                    .round() as usize;
+                // let lookup_num = (table_size as f64)
+                //     .sqrt()
+                //     .div((batch_size as f64).sqrt())
+                //     .round() as usize;
+                let delta_shift_num = log_table_size - log_batch_size;
                 let mut lookup_times: Vec<f64> = Vec::new(); // will store the lookup gen time for each lookup
-                for i in 0..lookup_num {
-                    let mut delta = batch_size * i;
+                for i in 0..delta_shift_num {
+                    let mut delta = batch_size << i;
                     // prepare current table
                     let mut current_table: Vec<usize> = old_table.clone();
                     let mut updates: Vec<(usize, usize)> = Vec::new();
@@ -1923,7 +1927,20 @@ mod tests {
                         delta,
                         lookup_time
                     );
-                    lookup_times.push(lookup_time);
+
+                    for repeat_times in 0..1 << delta_shift_num {
+                        lookup_times.push(lookup_time);
+                    }
+                    if (delta_shift_num * 2 > log_table_size - log_batch_size)
+                    {
+                        // compute average lookup time
+                        let mut sum = 0.0;
+                        for i in 0..lookup_times.len() {
+                            sum += lookup_times[i];
+                        }
+                        let avg = sum / lookup_times.len() as f64;
+                        println!("===> Average (finish at delta=sqrt(table*batch)) lookup time (without table init time) for table={} and batch={} is {} secs", table_size, batch_size, avg);
+                    }
                 }
                 // average lookup time
                 let mut sum = 0.0;
@@ -1931,7 +1948,7 @@ mod tests {
                     sum += lookup_times[i];
                 }
                 let avg = sum / lookup_times.len() as f64;
-                println!("===> Average lookup time (without table init time) for table={} and batch={} is {} secs", table_size, batch_size, avg);
+                println!("===> Average (finish at delta=table) lookup time (without table init time) for table={} and batch={} is {} secs", table_size, batch_size, avg);
             }
         }
     }
