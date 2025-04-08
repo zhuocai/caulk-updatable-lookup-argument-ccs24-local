@@ -648,7 +648,7 @@ pub fn generate_lookup_input<E: PairingEngine, R: RngCore>(
     let max_degree: usize = if N > 2 * m * m { N - 1 } else { 2 * m * m };
     let actual_degree = N - 1;
     let now = Instant::now();
-    let pp = PublicParameters::<E>::setup(&max_degree, &N, &m, &n);
+    let pp = PublicParameters::<E>::setup(&max_degree, &N, &m, &n, false);
     println!("Time to setup {:?}", now.elapsed());
 
     let c_poly = DensePolynomial::<E::Fr>::rand(actual_degree, rng);
@@ -749,7 +749,7 @@ mod tests {
         let N: usize = 1 << n;
         let powers_size: usize = N + 2; // SRS SIZE
         let temp_m = n; // dummy
-        let pp = PublicParameters::<E>::setup(&powers_size, &N, &temp_m, &n);
+        let pp = PublicParameters::<E>::setup(&powers_size, &N, &temp_m, &n, false);
         let actual_degree = N - 1;
         let path = format!("/tmp/poly_openings_{}.log", E::Fq::size_in_bits());
 
@@ -802,7 +802,7 @@ mod tests {
             println!("N={}", N);
             let temp_m = n; // dummy
             let now = Instant::now();
-            let mut pp = PublicParameters::<E>::setup(&powers_size, &N, &temp_m, &n);
+            let mut pp = PublicParameters::<E>::setup(&powers_size, &N, &temp_m, &n, false);
             let actual_degree = N - EPS;
             println!("time for setup of size {:?} = [{:?}]", N, now.elapsed());
             // println!("time for powers of tau {:?} for N={:?}", now.elapsed(),N);

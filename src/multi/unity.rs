@@ -504,7 +504,7 @@ pub mod tests {
 
         // run the setup
         let now = Instant::now();
-        let pp = crate::multi::PublicParameters::<E>::setup(&max_degree, &N, &m, &n);
+        let pp = crate::multi::PublicParameters::<E>::setup(&max_degree, &N, &m, &n, false);
         println!(
             "time to setup single openings of table size {:?} = {:?}",
             N + 1,

@@ -735,7 +735,7 @@ mod tests {
         let n = h_domain_size;
         let max_degree = N;
 
-        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n);
+        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n, false);
         let mut t_vec: Vec<usize> = Vec::new();
         for i in 0..N {
             t_vec.push(i);
@@ -829,7 +829,7 @@ mod tests {
         let n = h_domain_size;
         let max_degree = N;
 
-        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n);
+        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n, false);
         let mut t_vec: Vec<usize> = Vec::new();
         for i in 0..N {
             t_vec.push(i);
@@ -870,7 +870,7 @@ mod tests {
         let n = h_domain_size;
         let max_degree = N;
 
-        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n);
+        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n,false);
         let caulk_pp = CaulkPlusPublicParams::<E>::new_fake(&pp, h_domain_size);
         caulk_pp.store();
         //let caulk_pp: CaulkPlusPublicParams<E> = CaulkPlusPublicParams::load(h_domain_size);

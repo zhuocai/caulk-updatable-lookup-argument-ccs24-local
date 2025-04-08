@@ -43,7 +43,7 @@ fn main() {
     let temp_m = n; // dummy
 
     let now = Instant::now();
-    let mut pp = PublicParameters::<Bls12_381>::setup(&powers_size, &N, &temp_m, &n);
+    let mut pp = PublicParameters::<Bls12_381>::setup(&powers_size, &N, &temp_m, &n, false);
     println!(
         "Time to setup multi openings of table size {:?} = {:?}",
         actual_degree + 1,

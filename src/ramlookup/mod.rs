@@ -1134,7 +1134,7 @@ mod tests {
         let n = h_domain_size;
         let max_degree = N;
 
-        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n);
+        let pp: PublicParameters<E> = PublicParameters::setup(&max_degree, &N, &m, &n, false);
         let example: MonotonicTranscriptExample<E> = MonotonicTranscriptExample::new(m_domain_size, h_domain_size, &pp);
         example.display();
 
@@ -1190,7 +1190,7 @@ mod tests {
 
         // Compute KZG commitments
 
-        let pp: PublicParameters<Bls12_381> = PublicParameters::setup(&N, &N, &m, &N_domain_size);
+        let pp: PublicParameters<Bls12_381> = PublicParameters::setup(&N, &N, &m, &N_domain_size, false);
 
         let (a_com, a_bar_com, a_dash_com,
             v_com, v_bar_com, v_dash_com,

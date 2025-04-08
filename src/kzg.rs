@@ -586,7 +586,7 @@ pub mod tests {
         let N: usize = 1 << p;
 
         let now = Instant::now();
-        let pp = crate::multi::PublicParameters::<E>::setup(&max_degree, &N, &m, &p);
+        let pp = crate::multi::PublicParameters::<E>::setup(&max_degree, &N, &m, &p, false);
         println!("time to setup {:?}", now.elapsed());
 
         let mut positions: Vec<usize> = vec![];
@@ -631,7 +631,7 @@ pub mod tests {
         let actual_degree: usize = (1 << p) - 1;
         let m: usize = 1 << (p / 2);
         let N: usize = 1 << p;
-        let pp = crate::multi::PublicParameters::setup(&max_degree, &N, &m, &p);
+        let pp = crate::multi::PublicParameters::setup(&max_degree, &N, &m, &p, false);
 
         // Setting up test instance to run evaluate on.
         // test randomness for c_poly is same everytime.

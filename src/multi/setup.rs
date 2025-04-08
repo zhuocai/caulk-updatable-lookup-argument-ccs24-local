@@ -1,4 +1,5 @@
 use crate::util::trim;
+use ark_bls12_377::g2;
 use ark_ec::{AffineCurve, PairingEngine, ProjectiveCurve};
 use ark_ff::{PrimeField, UniformRand};
 use ark_poly::{
@@ -8,6 +9,7 @@ use ark_poly::{
 use ark_poly_commit::kzg10::*;
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};
 use ark_std::{cfg_into_iter, One, Zero};
+use ark_test_curves::pairing::Pairing;
 #[cfg(feature = "parallel")]
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 use std::{
@@ -80,6 +82,15 @@ pub struct VerifierPublicParameters<E: PairingEngine> {
     pub poly_vk: VerifierKey<E>,
     pub domain_m_size: usize,
 }
+
+// pub fn dummy_kzg10_setup<E:PairingEngine>(
+//     max_degree: usize,
+//     fr: E::Fr,
+//     g1r: E::G1Affine,
+//     g2r: E::G2Affine,
+// ) -> ark_poly_commit::kzg10::UniversalParams<E> {
+//     UniversalParams { powers_of_g: vec![g1r; max_degree+1], powers_of_gamma_g: vec![g1r; max_degree+1], h: g2r, beta_h: g2r, neg_powers_of_h: vec![g2r;max_degree+1], prepared_h: g2r.into(), prepared_beta_h: g2r.into()}
+// }
 
 impl<E: PairingEngine> PublicParameters<E> {
     pub fn regenerate_lookup_params(&mut self, m: usize) {
@@ -235,7 +246,7 @@ impl<E: PairingEngine> PublicParameters<E> {
     // smaller than max_degree @m lookup size. Can be c hanged later
     // @n suppl domain for the unity proofs. Should be at least 6+log N
     #[allow(non_snake_case)]
-    pub fn setup(max_degree: &usize, N: &usize, m: &usize, n: &usize) -> PublicParameters<E> {
+    pub fn setup(max_degree: &usize, N: &usize, m: &usize, n: &usize, dummy:bool) -> PublicParameters<E> {
         // Setup algorithm. To be replaced by output of a universal setup before being
         // production ready.
 
@@ -247,8 +258,9 @@ impl<E: PairingEngine> PublicParameters<E> {
         // try opening the file. If it exists load the setup from there, otherwise
         // generate
         let path = format!("srs/srs_{}_{}.setup", max_degree, E::Fq::size_in_bits());
-        let res = File::open(path.clone());
+        let mut res = File::open(path.clone());
         let store_to_file: bool;
+        res = Err(std::io::Error::new(std::io::ErrorKind::NotFound, "dummy"));
         match res {
             Ok(_) => {
                 let now = Instant::now();
@@ -262,8 +274,9 @@ impl<E: PairingEngine> PublicParameters<E> {
             Err(_) => {
                 let rng = &mut ark_std::test_rng();
                 let now = Instant::now();
-                let srs =
-                    KZG10::<E, DensePolynomial<E::Fr>>::setup(*max_degree, true, rng).unwrap();
+                let srs = match dummy{
+                    true => KZG10::<E, DensePolynomial<E::Fr>>::setup(*max_degree, true, rng).unwrap(), // difficult to make it dummy
+                    false => KZG10::<E, DensePolynomial<E::Fr>>::setup(*max_degree, true, rng).unwrap()};
                 println!("time to setup powers = {:?}", now.elapsed());
 
                 // trim down to size
@@ -286,7 +299,7 @@ impl<E: PairingEngine> PublicParameters<E> {
 
                 for _ in 0..poly_ck.powers_of_g.len() {
                     g2_powers.push(temp);
-                    temp = temp.mul(beta).into_affine();
+                    if !dummy {temp = temp.mul(beta).into_affine();}
                 }
 
                 store_to_file = true;
@@ -346,7 +359,7 @@ pub fn test_load() {
     let N: usize = 1 << n;
     let powers_size: usize = 4 * N; // SRS SIZE
     let temp_m = n; // dummy
-    let pp = PublicParameters::<Bls12_381>::setup(&powers_size, &N, &temp_m, &n);
+    let pp = PublicParameters::<Bls12_381>::setup(&powers_size, &N, &temp_m, &n, false);
 
     let path = "powers.log";
     pp.store(path);
