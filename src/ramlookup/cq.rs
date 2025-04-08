@@ -1781,8 +1781,8 @@ mod tests {
 
         // for each pair of (table_size, batch_size), run table init
         let mut rng = ark_std::test_rng();
-        let log_table_sizes: Vec<usize> = vec![16, 17, 18, 19, 20];
-        let log_batch_sizes: Vec<usize> = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let log_table_sizes: Vec<usize> = vec![20, 21, 22];
+        let log_batch_sizes: Vec<usize> = vec![4, 6, 8, 10];
         for i in 0..log_table_sizes.len() {
             let log_table_size = log_table_sizes[i];
             let table_size = 1usize << log_table_size;
