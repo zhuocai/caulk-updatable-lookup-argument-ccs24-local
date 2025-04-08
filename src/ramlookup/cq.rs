@@ -1784,8 +1784,8 @@ mod tests {
 
         // for each pair of (table_size, batch_size), run table init
         let mut rng = ark_std::test_rng();
-        let log_table_sizes: Vec<usize> = vec![20, 21, 22];
-        let log_batch_sizes: Vec<usize> = vec![4, 6, 8, 10];
+        let log_table_sizes: Vec<usize> = vec![20, 21, 22, 23, 24, 25, 26];
+        let log_batch_sizes: Vec<usize> = vec![10, 8, 6];
         for i in 0..log_table_sizes.len() {
             let log_table_size = log_table_sizes[i];
             let table_size = 1usize << log_table_size;
@@ -1837,8 +1837,11 @@ mod tests {
                 //     .round() as usize;
                 let delta_shift_num = log_table_size - log_batch_size;
                 let mut lookup_times: Vec<f64> = Vec::new(); // will store the lookup gen time for each lookup
-                for i in 0..delta_shift_num {
-                    let mut delta = batch_size << i;
+                for d_k in 0..(delta_shift_num+1) {
+                    let mut delta = 0;
+                    if d_k >= 1 {
+                        delta = batch_size << (d_k-1);
+                    }
                     // prepare current table
                     let mut current_table: Vec<usize> = old_table.clone();
                     let mut updates: Vec<(usize, usize)> = Vec::new();
@@ -1927,25 +1930,36 @@ mod tests {
                         delta,
                         lookup_time
                     );
-
-                    for repeat_times in 0..1 << delta_shift_num {
-                        lookup_times.push(lookup_time);
+                    
+                    let mut prev_lookup_time = 0.0 as f64;
+                    let mut time_diff_per_update = 0.0 as f64;
+                    let mut repeat_n = 1;
+                    if d_k > 0 {repeat_n = 1<<(d_k-1); }
+                    if d_k >0 {
+                        prev_lookup_time = lookup_times[lookup_times.len()-1];
+                        time_diff_per_update = (lookup_time - prev_lookup_time) / (repeat_n as f64);
                     }
-                    if (delta_shift_num * 2 > log_table_size - log_batch_size)
-                    {
-                        // compute average lookup time
-                        let mut sum = 0.0;
-                        for i in 0..lookup_times.len() {
-                            sum += lookup_times[i];
-                        }
-                        let avg = sum / lookup_times.len() as f64;
-                        println!("===> Average (finish at delta=sqrt(table*batch)) lookup time (without table init time) for table={} and batch={} is {} secs", table_size, batch_size, avg);
+                    
+                    for repeat_times in 0..repeat_n {
+                        lookup_times.push(lookup_time - (((repeat_n)-1-repeat_times) as f64)*time_diff_per_update);
                     }
+                    
+                    
+                    // compute average lookup time
+                    let mut sum = 0.0;
+                    for i in 0..lookup_times.len() {
+                        sum += lookup_times[i];
+                        println!("lookup_time for delta={} is estimated to {} secs", i*batch_size, lookup_times[i]);
+                    }
+                    let avg = sum / lookup_times.len() as f64;
+                    println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
+                    
                 }
                 // average lookup time
                 let mut sum = 0.0;
                 for i in 0..lookup_times.len() {
                     sum += lookup_times[i];
+                    println!("lookup_time for delta={} is estimated to be {} secs", i*batch_size, lookup_times[i]);
                 }
                 let avg = sum / lookup_times.len() as f64;
                 println!("===> Average (finish at delta=table) lookup time (without table init time) for table={} and batch={} is {} secs", table_size, batch_size, avg);
