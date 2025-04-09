@@ -1949,7 +1949,7 @@ mod tests {
                     let mut sum = 0.0;
                     for i in 0..lookup_times.len() {
                         sum += lookup_times[i];
-                        println!("lookup_time for delta={} is estimated to {} secs", i*batch_size, lookup_times[i]);
+                        // println!("lookup_time for delta={} is estimated to {} secs", i*batch_size, lookup_times[i]);
                     }
                     let avg = sum / lookup_times.len() as f64;
                     println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
@@ -1959,7 +1959,7 @@ mod tests {
                 let mut sum = 0.0;
                 for i in 0..lookup_times.len() {
                     sum += lookup_times[i];
-                    println!("lookup_time for delta={} is estimated to be {} secs", i*batch_size, lookup_times[i]);
+                    // println!("lookup_time for delta={} is estimated to be {} secs", i*batch_size, lookup_times[i]);
                 }
                 let avg = sum / lookup_times.len() as f64;
                 println!("===> Average (finish at delta=table) lookup time (without table init time) for table={} and batch={} is {} secs", table_size, batch_size, avg);
