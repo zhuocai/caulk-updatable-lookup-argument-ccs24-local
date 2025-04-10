@@ -1,0 +1,272 @@
+
+running 1 test
+time to load powers = 146.397736ms
+Table specific parameters already exist. Loading from file
+Running protocol for m = 1024, K = 1024, log(m) = 10, log(K)=10
+Created example in 85ms
+Committed t_com in 9916ms
+Committed f_com in 35ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 245 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 519 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 56 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 54 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 141 msec
+Time for divisions = 0
+Evaluating C(X) over K took 126 msec
+Scalar computation took 1266 msec
+MSM took 70 msecs
+Proof Generation Time: 1674 msecs
+Verification took 13 ms
+Proof Verification Time  = 13 msecs
+Verification Result [ true ]
+Running protocol for m = 1024, K = 2048, log(m) = 10, log(K)=11
+Created example in 79ms
+Committed t_com in 8230ms
+Committed f_com in 33ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 243 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 774 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 57 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 159 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 237 msec
+Time for divisions = 0
+Evaluating C(X) over K took 293 msec
+Scalar computation took 1979 msec
+MSM took 94 msecs
+Proof Generation Time: 2415 msecs
+Verification took 12 ms
+Proof Verification Time  = 12 msecs
+Verification Result [ true ]
+Running protocol for m = 1024, K = 4096, log(m) = 10, log(K)=12
+Created example in 79ms
+Committed t_com in 8419ms
+Committed f_com in 32ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 262 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 1621 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 58 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 374 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 151 msec
+Time for divisions = 0
+Evaluating C(X) over K took 606 msec
+Scalar computation took 3440 msec
+MSM took 149 msecs
+Proof Generation Time: 3935 msecs
+Verification took 13 ms
+Proof Verification Time  = 13 msecs
+Verification Result [ true ]
+Running protocol for m = 1024, K = 8192, log(m) = 10, log(K)=13
+Created example in 89ms
+Committed t_com in 8425ms
+Committed f_com in 32ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 248 msec
+Time for divisions = 1
+Computed update params in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 3643 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 86 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 933 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 170 msec
+Time for divisions = 1
+Evaluating C(X) over K took 1312 msec
+Scalar computation took 7088 msec
+MSM took 249 msecs
+Proof Generation Time: 7694 msecs
+Verification took 11 ms
+Proof Verification Time  = 11 msecs
+Verification Result [ true ]
+Running protocol for m = 1024, K = 16384, log(m) = 10, log(K)=14
+Created example in 81ms
+Committed t_com in 7934ms
+Committed f_com in 32ms
+Using update = true
+test ramlookup::cq::tests::test_run_full_protocol has been running for over 60 seconds
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 245 msec
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 7322 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 55 msec
+Time for divisions = 1
+Evaluating Z_I(X) over K took 1733 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 152 msec
+Time for divisions = 2
+Evaluating C(X) over K took 2671 msec
+Scalar computation took 13483 msec
+MSM took 438 msecs
+Proof Generation Time: 14287 msecs
+Verification took 12 ms
+Proof Verification Time  = 12 msecs
+Verification Result [ true ]
+Running protocol for m = 1024, K = 32768, log(m) = 10, log(K)=15
+Created example in 83ms
+Committed t_com in 7909ms
+Committed f_com in 35ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 242 msec
+Time for divisions = 8
+Computed update params in 10 secs
+Time for sub-products = 0
+Time for divisions = 1
+Computed oracles on set I in 1 secs
+Interpolated q polynomial in 3 secs
+Time for sub-products = 0
+Time for divisions = 1
+Evaluated q_dvt on I in 1 secs
+Computing a_vec over K took 17112 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 55 msec
+Time for divisions = 3
+Evaluating Z_I(X) over K took 3316 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 145 msec
+Time for divisions = 5
+Evaluating C(X) over K took 5273 msec
+Scalar computation took 28774 msec
+MSM took 756 msecs
+Proof Generation Time: 29975 msecs
+Verification took 16 ms
+Proof Verification Time  = 16 msecs
+Verification Result [ true ]
+test ramlookup::cq::tests::test_run_full_protocol ... ok
+
+successes:
+
+successes:
+    ramlookup::cq::tests::test_run_full_protocol
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 33 filtered out; finished in 111.97s
+

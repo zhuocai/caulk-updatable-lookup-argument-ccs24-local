@@ -1784,14 +1784,43 @@ mod tests {
 
         // for each pair of (table_size, batch_size), run table init
         let mut rng = ark_std::test_rng();
-        let log_table_sizes: Vec<usize> = vec![20, 21, 22, 23, 24, 25, 26];
-        let log_batch_sizes: Vec<usize> = vec![10, 8, 6];
-        for i in 0..log_table_sizes.len() {
-            let log_table_size = log_table_sizes[i];
+        // let log_table_sizes: Vec<usize> = vec![20, 21, 22, 23, 24, 25, 26];
+        // let log_batch_sizes: Vec<usize> = vec![10, 8, 6];
+        // already have: 
+        // 20: 10, 8, 6
+        // 21: 10, 8, 6
+        // 22: 10, 8, 6
+        // 23: 10, 8, 6
+        // 24: 10
+
+        // apr10: need
+        // 16: 10
+        // 17: 10
+        // 18: 10, 12
+        // 19: 10, 12
+        // 20: 2, 4, 12, 14
+        // 21: 12, 14
+        // 22: 4, 12, 14
+        // 23: 14
+        // 24: 2, 6, 8, 12, 14
+
+        let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
+            (16, vec![10]),
+            (17, vec![10]),
+            (18, vec![10, 12]),
+            (19, vec![10, 12]),
+            (20, vec![2, 4, 12, 14]),
+            (21, vec![12, 14]),
+            (22, vec![4, 12, 14]),
+            (23, vec![14]),
+            (24, vec![2, 6, 8, 12, 14]),
+        ];
+        for i in 0..log_table_batches.len() {
+            let log_table_size = log_table_batches[i].0;
             let table_size = 1usize << log_table_size;
-            for j in 0..log_batch_sizes.len() {
+            for j in 0..log_table_batches[i].1.len() {
                 let mut timer = Instant::now();
-                let log_batch_size = log_batch_sizes[j];
+                let log_batch_size = log_table_batches[i].1[j];
                 let batch_size = 1usize << log_batch_size;
                 println!(
                     "Running setup for table size {} and batch size {}",
@@ -1806,7 +1835,7 @@ mod tests {
                     &log_table_size,
                     true,
                 );
-                let cq_pp: CqPublicParams<E> = CqPublicParams::new(&pp, log_table_sizes[i], true);
+                let cq_pp: CqPublicParams<E> = CqPublicParams::new(&pp, log_table_size, true);
 
                 println!("dummy pp setup takes {} seconds", timer.elapsed().as_secs());
                 // init a random base table
@@ -1953,16 +1982,19 @@ mod tests {
                     }
                     let avg = sum / lookup_times.len() as f64;
                     println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
-                    
+                    if lookup_time>1000.0 {
+                        println!("lookup time is too long, stop exploring more delta");
+                        break;
+                    }
                 }
-                // average lookup time
-                let mut sum = 0.0;
-                for i in 0..lookup_times.len() {
-                    sum += lookup_times[i];
-                    // println!("lookup_time for delta={} is estimated to be {} secs", i*batch_size, lookup_times[i]);
-                }
-                let avg = sum / lookup_times.len() as f64;
-                println!("===> Average (finish at delta=table) lookup time (without table init time) for table={} and batch={} is {} secs", table_size, batch_size, avg);
+                // // average lookup time
+                // let mut sum = 0.0;
+                // for i in 0..lookup_times.len() {
+                //     sum += lookup_times[i];
+                //     // println!("lookup_time for delta={} is estimated to be {} secs", i*batch_size, lookup_times[i]);
+                // }
+                // let avg = sum / lookup_times.len() as f64;
+                // println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
             }
         }
     }

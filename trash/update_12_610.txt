@@ -1,0 +1,31 @@
+
+running 1 test
+time to load powers = 6.381284ms
+Table specific parameters already exist. Loading from file
+Running protocol for m = 64, K = 0, log(m) = 6, log(K)=0
+Created example in 2ms
+Committed t_com in 368ms
+Committed f_com in 4ms
+Using update = false
+Proof Generation Time: 57 msecs
+Verification took 11 ms
+Proof Verification Time  = 12 msecs
+Verification Result [ true ]
+Running protocol for m = 1024, K = 0, log(m) = 10, log(K)=0
+Created example in 2ms
+Committed t_com in 390ms
+Committed f_com in 31ms
+Using update = false
+Proof Generation Time: 316 msecs
+Verification took 12 ms
+Proof Verification Time  = 12 msecs
+Verification Result [ true ]
+test ramlookup::cq::tests::test_run_full_protocol ... ok
+
+successes:
+
+successes:
+    ramlookup::cq::tests::test_run_full_protocol
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 34 filtered out; finished in 1.42s
+
