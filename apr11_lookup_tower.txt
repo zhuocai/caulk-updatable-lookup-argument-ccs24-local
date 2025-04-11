@@ -3176,3 +3176,8 @@ Proof Generation Time for table=16777216 and batch=16 and delta=2097152: 1856.87
 ===> Average (finish at delta=2097152) lookup time (without table init time) for table=16777216 and batch=16 is 881.3059910405018 secs
 lookup time is too long, stop exploring more delta
 Running setup for table size 16777216 and batch size 262144
+time to setup powers = 1191.976179193s
+error: test failed, to rerun pass `--lib`
+
+Caused by:
+  process didn't exit successfully: `/home/caizhuo/code/caulk-updatable-lookup-argument-ccs24-local/target/release/deps/caulk-5761a1506561317d 'ramlookup::cq::tests::test_delta_lookup' --show-output --nocapture` (signal: 9, SIGKILL: kill)
