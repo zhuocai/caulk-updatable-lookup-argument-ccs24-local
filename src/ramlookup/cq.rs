@@ -1804,11 +1804,6 @@ mod tests {
         // 23: 14
         // 24: 2, 6, 8, 12, 14
 
-        // Result3: apr11_lookup_tower.txt
-        // need more because compare ccs24 with more cols by having more rows. 
-        // 20: 0
-        // 24: 4, 18
-        // 
 
         // let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
         //     (16, vec![10]),
@@ -1822,9 +1817,24 @@ mod tests {
         //     (24, vec![2, 6, 8, 12, 14]),
         // ];
 
+        // Result3: apr11_lookup_tower.txt
+        // need more because compare ccs24 with more cols by having more rows. 
+        // 20: 0
+        // 24: 4, 18
+        // 
+
+
+        // let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
+        //     (20, vec![0]),
+        //     (24, vec![4, 18]),
+        // ];
+
+        // Result4: apr11_2_lookup_tower.txt
+        // 25: 5, 7, 9, 11, 13, 15
+
         let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
-            (20, vec![0]),
-            (24, vec![4, 18]),
+            (25, vec![5, 7, 9, 11, 13, 15]),
+            (26, vec![16])
         ];
 
         for i in 0..log_table_batches.len() {
