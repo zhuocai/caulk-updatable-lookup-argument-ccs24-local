@@ -1786,14 +1786,14 @@ mod tests {
         let mut rng = ark_std::test_rng();
         // let log_table_sizes: Vec<usize> = vec![20, 21, 22, 23, 24, 25, 26];
         // let log_batch_sizes: Vec<usize> = vec![10, 8, 6];
-        // already have: 
+        // Result 1: already have: in major_lookup_tower_bls12_381.txt
         // 20: 10, 8, 6
         // 21: 10, 8, 6
         // 22: 10, 8, 6
         // 23: 10, 8, 6
         // 24: 10
 
-        // apr10: need
+        // Result2: apr10_lookup_tower.txt
         // 16: 10
         // 17: 10
         // 18: 10, 12
@@ -1804,17 +1804,29 @@ mod tests {
         // 23: 14
         // 24: 2, 6, 8, 12, 14
 
+        // Result3: apr11_lookup_tower.txt
+        // need more because compare ccs24 with more cols by having more rows. 
+        // 20: 0
+        // 24: 4, 18
+        // 
+
+        // let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
+        //     (16, vec![10]),
+        //     (17, vec![10]),
+        //     (18, vec![10, 12]),
+        //     (19, vec![10, 12]),
+        //     (20, vec![2, 4, 12, 14]),
+        //     (21, vec![12, 14]),
+        //     (22, vec![4, 12, 14]),
+        //     (23, vec![14]),
+        //     (24, vec![2, 6, 8, 12, 14]),
+        // ];
+
         let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
-            (16, vec![10]),
-            (17, vec![10]),
-            (18, vec![10, 12]),
-            (19, vec![10, 12]),
-            (20, vec![2, 4, 12, 14]),
-            (21, vec![12, 14]),
-            (22, vec![4, 12, 14]),
-            (23, vec![14]),
-            (24, vec![2, 6, 8, 12, 14]),
+            (20, vec![0]),
+            (24, vec![4, 18]),
         ];
+
         for i in 0..log_table_batches.len() {
             let log_table_size = log_table_batches[i].0;
             let table_size = 1usize << log_table_size;
