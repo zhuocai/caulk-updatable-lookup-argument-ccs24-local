@@ -1838,10 +1838,11 @@ mod tests {
 
         let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
             (20, vec![4, 10]),
-            (22, vec![6, 12]),
-            (24, vec![4, 6, 8, 10, 12, 14]), 
+            (22, vec![2, 4, 6, 8, 10, 12]),
+            (24, vec![8, 14]),
+            (25, vec![5, 7, 9, 11, 13, 15]), 
             (26, vec![10, 16]),
-            (28, vec![8, 10, 12, 14, 16, 18]),  
+            // (28, vec![8, 10, 12, 14, 16, 18]),  
         ];
 
         let mut out_file = File::create("apr12_lookup_results.txt").unwrap();
