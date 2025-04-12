@@ -1,0 +1,4508 @@
+   Compiling caulk v0.1.0 (/home/caizhuo/code/caulk-updatable-lookup-argument-ccs24-local)
+warning: unused import: `std::fmt::DebugMap`
+ --> src/dft.rs:7:5
+  |
+7 | use std::fmt::DebugMap;
+  |     ^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `Div`
+ --> src/dft.rs:8:21
+  |
+8 | use std::ops::{Add, Div, Mul, Neg, Sub};
+  |                     ^^^
+
+warning: unused import: `PairingEngine`
+ --> src/dft.rs:9:14
+  |
+9 | use ark_ec::{PairingEngine, ProjectiveCurve};
+  |              ^^^^^^^^^^^^^
+
+warning: unused import: `ark_serialize::CanonicalSerialize`
+  --> src/dft.rs:15:5
+   |
+15 | use ark_serialize::CanonicalSerialize;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::ops::Neg`
+   --> src/dft.rs:756:9
+    |
+756 |     use std::ops::Neg;
+    |         ^^^^^^^^^^^^^
+
+warning: unused import: `ark_ec::mnt4::G1Projective`
+   --> src/dft.rs:760:9
+    |
+760 |     use ark_ec::mnt4::G1Projective;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ark_bn254::G2Affine`
+  --> src/kzg.rs:20:5
+   |
+20 | use ark_bn254::G2Affine;
+   |     ^^^^^^^^^^^^^^^^^^^
+
+warning: unnecessary parentheses around assigned value
+   --> src/kzg.rs:311:18
+    |
+311 |         status = (prod.is_one());
+    |                  ^             ^
+    |
+    = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+    |
+311 -         status = (prod.is_one());
+311 +         status = prod.is_one();
+    |
+
+warning: unused import: `ark_bls12_377::g2`
+ --> src/multi/setup.rs:2:5
+  |
+2 | use ark_bls12_377::g2;
+  |     ^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ark_test_curves::pairing::Pairing`
+  --> src/multi/setup.rs:12:5
+   |
+12 | use ark_test_curves::pairing::Pairing;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ark_bls12_381::Bls12_381`
+  --> src/multi/setup.rs:21:5
+   |
+21 | use ark_bls12_381::Bls12_381;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ark_bn254::Bn254`
+  --> src/multi/setup.rs:22:5
+   |
+22 | use ark_bn254::Bn254;
+   |     ^^^^^^^^^^^^^^^^
+
+warning: unused import: `std::marker::PhantomData`
+ --> src/ramlookup/caulkplus.rs:4:5
+  |
+4 | use std::marker::PhantomData;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ark_msm::msm::VariableBaseMSM`
+ --> src/ramlookup/caulkplus.rs:8:5
+  |
+8 | use ark_msm::msm::VariableBaseMSM;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `RngCore` and `Rng`
+  --> src/ramlookup/caulkplus.rs:13:12
+   |
+13 | use rand::{Rng, RngCore};
+   |            ^^^  ^^^^^^^
+
+warning: unnecessary parentheses around assigned value
+   --> src/ramlookup/caulkplus.rs:269:15
+    |
+269 |     let b_c = (lhs == rhs);
+    |               ^          ^
+    |
+help: remove these parentheses
+    |
+269 -     let b_c = (lhs == rhs);
+269 +     let b_c = lhs == rhs;
+    |
+
+warning: unnecessary parentheses around assigned value
+   --> src/ramlookup/caulkplus.rs:276:21
+    |
+276 |     let b_opening = (E::pairing(u_com, g2) == E::pairing(proof.z_i_com, proof.g2_opening));
+    |                     ^                                                                    ^
+    |
+help: remove these parentheses
+    |
+276 -     let b_opening = (E::pairing(u_com, g2) == E::pairing(proof.z_i_com, proof.g2_opening));
+276 +     let b_opening = E::pairing(u_com, g2) == E::pairing(proof.z_i_com, proof.g2_opening);
+    |
+
+warning: unused import: `PrimeField`
+   --> src/ramlookup/caulkplus.rs:697:25
+    |
+697 |     use ark_ff::{Field, PrimeField};
+    |                         ^^^^^^^^^^
+
+warning: unused import: `ark_bls12_381::Fr`
+   --> src/ramlookup/caulkplus.rs:698:9
+    |
+698 |     use ark_bls12_381::Fr;
+    |         ^^^^^^^^^^^^^^^^^
+
+warning: unused import: `crate::multi::generate_lookup_input`
+   --> src/ramlookup/caulkplus.rs:701:9
+    |
+701 |     use crate::multi::generate_lookup_input;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ark_ff::One`
+   --> src/ramlookup/fastupdate.rs:379:9
+    |
+379 |     use ark_ff::One;
+    |         ^^^^^^^^^^^
+
+warning: unused import: `crate::multi::TableInput`
+ --> src/ramlookup/cq.rs:1:5
+  |
+1 | use crate::multi::TableInput;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `CaulkPlusProverInput` and `CaulkPlusPublicParams`
+ --> src/ramlookup/cq.rs:2:35
+  |
+2 | use crate::ramlookup::caulkplus::{CaulkPlusProverInput, CaulkPlusPublicParams};
+  |                                   ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `compute_scalar_coefficients_naive`
+ --> src/ramlookup/cq.rs:4:34
+  |
+4 |     compute_scalar_coefficients, compute_scalar_coefficients_naive,
+  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `cfg_into_iter`
+  --> src/ramlookup/cq.rs:13:15
+   |
+13 | use ark_std::{cfg_into_iter, UniformRand};
+   |               ^^^^^^^^^^^^^
+
+warning: unused import: `DivAssign`
+  --> src/ramlookup/cq.rs:21:37
+   |
+21 | use std::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg};
+   |                                     ^^^^^^^^^
+
+warning: unnecessary parentheses around method argument
+    --> src/ramlookup/cq.rs:1115:45
+     |
+1115 |         let mut f = File::open(path).expect((format!("Unable to open file {path}").as_str()));
+     |                                             ^                                              ^
+     |
+help: remove these parentheses
+     |
+1115 -         let mut f = File::open(path).expect((format!("Unable to open file {path}").as_str()));
+1115 +         let mut f = File::open(path).expect(format!("Unable to open file {path}").as_str());
+     |
+
+warning: unnecessary parentheses around method argument
+    --> src/ramlookup/cq.rs:1475:49
+     |
+1475 |             let mut f = File::open(path).expect((format!("Unable to open file {path}").as_str()));
+     |                                                 ^                                              ^
+     |
+help: remove these parentheses
+     |
+1475 -             let mut f = File::open(path).expect((format!("Unable to open file {path}").as_str()));
+1475 +             let mut f = File::open(path).expect(format!("Unable to open file {path}").as_str());
+     |
+
+warning: denote infinite loops with `loop { ... }`
+    --> src/ramlookup/cq.rs:1650:13
+     |
+1650 |             while true {
+     |             ^^^^^^^^^^ help: use `loop`
+     |
+     = note: `#[warn(while_true)]` on by default
+
+warning: unnecessary parentheses around `if` condition
+    --> src/ramlookup/cq.rs:2118:16
+     |
+2118 |             if (*log_k == 0) {
+     |                ^           ^
+     |
+help: remove these parentheses
+     |
+2118 -             if (*log_k == 0) {
+2118 +             if *log_k == 0 {
+     |
+
+warning: unused import: `std::marker::PhantomData`
+ --> src/ramlookup/mod.rs:6:5
+  |
+6 | use std::marker::PhantomData;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Neg`
+ --> src/ramlookup/mod.rs:7:48
+  |
+7 | use std::ops::{AddAssign, Div, Mul, MulAssign, Neg, Sub};
+  |                                                ^^^
+
+warning: unused imports: `BigInteger` and `FftField`
+ --> src/ramlookup/mod.rs:9:14
+  |
+9 | use ark_ff::{BigInteger, FftField, Field, One, PrimeField, Zero};
+  |              ^^^^^^^^^^  ^^^^^^^^
+
+warning: unused import: `kzg10`
+  --> src/ramlookup/mod.rs:11:23
+   |
+11 | use ark_poly_commit::{kzg10, Polynomial, UVPolynomial};
+   |                       ^^^^^
+
+warning: unused import: `Proof`
+  --> src/ramlookup/mod.rs:12:30
+   |
+12 | use ark_poly_commit::kzg10::{Proof, VerifierKey};
+   |                              ^^^^^
+
+warning: unused imports: `log2` and `test_rng`
+  --> src/ramlookup/mod.rs:13:15
+   |
+13 | use ark_std::{log2, test_rng, time::Instant, UniformRand};
+   |               ^^^^  ^^^^^^^^
+
+warning: unused import: `merlin::Transcript`
+  --> src/ramlookup/mod.rs:14:5
+   |
+14 | use merlin::Transcript;
+   |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `LookupInstance`, `LookupProverInput`, `compute_lookup_proof`, `get_poly_and_g2_openings`, and `verify_lookup_proof`
+  --> src/ramlookup/mod.rs:16:5
+   |
+16 |     compute_lookup_proof, get_poly_and_g2_openings, verify_lookup_proof, LookupInstance,
+   |     ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^
+17 |     LookupProverInput,
+   |     ^^^^^^^^^^^^^^^^^
+
+warning: unused import: `ark_ff::PrimeField`
+    --> src/ramlookup/mod.rs:1118:9
+     |
+1118 |     use ark_ff::PrimeField;
+     |         ^^^^^^^^^^^^^^^^^^
+
+warning: unnecessary parentheses around `if` condition
+    --> src/ramlookup/mod.rs:1288:16
+     |
+1288 |             if (tree[cur_node] >= level_threshold) {
+     |                ^                                 ^
+     |
+help: remove these parentheses
+     |
+1288 -             if (tree[cur_node] >= level_threshold) {
+1288 +             if tree[cur_node] >= level_threshold {
+     |
+
+warning: unused import: `AffineCurve`
+   --> src/dft.rs:761:18
+    |
+761 |     use ark_ec::{AffineCurve, PairingEngine};
+    |                  ^^^^^^^^^^^
+
+warning: unused import: `ark_test_curves::pairing::Pairing`
+  --> src/ramlookup/cq.rs:14:5
+   |
+14 | use ark_test_curves::pairing::Pairing;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: value assigned to `result` is never read
+  --> src/dft.rs:47:13
+   |
+47 |     let mut result: DensePolynomial<F> = DensePolynomial::zero();
+   |             ^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+   = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `p`
+  --> src/dft.rs:40:5
+   |
+40 |     p: usize,       // log of domain size
+   |     ^ help: if this is intentional, prefix it with an underscore: `_p`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `p`
+  --> src/dft.rs:72:5
+   |
+72 |     p: usize,               // log of degree
+   |     ^ help: if this is intentional, prefix it with an underscore: `_p`
+
+warning: value assigned to `result` is never read
+  --> src/dft.rs:97:13
+   |
+97 |     let mut result: DensePolynomial<F> = DensePolynomial::zero();
+   |             ^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+
+warning: unused variable: `i`
+   --> src/dft.rs:101:9
+    |
+101 |     for i  in 0usize..(ark_std::log2(l) as usize)  {
+    |         ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: variable does not need to be mutable
+   --> src/dft.rs:109:13
+    |
+109 |         let mut fred: DensePolynomial<F> = DensePolynomial::from_coefficients_vec(f_coeffs);
+    |             ----^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: value assigned to `quotient` is never read
+   --> src/dft.rs:135:13
+    |
+135 |     let mut quotient: DensePolynomial<F> = DensePolynomial::zero();
+    |             ^^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: value assigned to `remainder` is never read
+   --> src/dft.rs:136:13
+    |
+136 |     let mut remainder: DensePolynomial<F> = DensePolynomial::zero();
+    |             ^^^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: value assigned to `quotient` is never read
+   --> src/dft.rs:183:13
+    |
+183 |     let mut quotient: DensePolynomial<F> = DensePolynomial::zero();
+    |             ^^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: value assigned to `remainder` is never read
+   --> src/dft.rs:184:13
+    |
+184 |     let mut remainder: DensePolynomial<F> = DensePolynomial::zero();
+    |             ^^^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: variable does not need to be mutable
+   --> src/dft.rs:308:9
+    |
+308 |     let mut start = Instant::now();
+    |         ----^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: unused variable: `a_poly`
+   --> src/dft.rs:405:5
+    |
+405 |     a_poly: &DensePolynomial<F>,
+    |     ^^^^^^ help: if this is intentional, prefix it with an underscore: `_a_poly`
+
+warning: unused variable: `b_poly`
+   --> src/dft.rs:406:5
+    |
+406 |     b_poly: &DensePolynomial<F>,
+    |     ^^^^^^ help: if this is intentional, prefix it with an underscore: `_b_poly`
+
+warning: unused variable: `i`
+   --> src/dft.rs:814:13
+    |
+814 |         for i in 1..npolys {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `start`
+   --> src/dft.rs:850:17
+    |
+850 |         let mut start = Instant::now();
+    |                 ^^^^^ help: if this is intentional, prefix it with an underscore: `_start`
+
+warning: unused variable: `prod`
+   --> src/dft.rs:854:13
+    |
+854 |         let prod = VariableBaseMSM::multi_scalar_mul(grp_vec.as_slice(), scalar_vec.as_slice());
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_prod`
+
+warning: variable does not need to be mutable
+   --> src/dft.rs:850:13
+    |
+850 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `rng`
+   --> src/dft.rs:868:17
+    |
+868 |         let mut rng = test_rng();
+    |                 ^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+
+warning: variable does not need to be mutable
+   --> src/dft.rs:868:13
+    |
+868 |         let mut rng = test_rng();
+    |             ----^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `rng`
+   --> src/dft.rs:878:17
+    |
+878 |         let mut rng = test_rng();
+    |                 ^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+
+warning: variable does not need to be mutable
+   --> src/dft.rs:878:13
+    |
+878 |         let mut rng = test_rng();
+    |             ----^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `coeffs`
+   --> src/dft.rs:901:13
+    |
+901 |         let coeffs: Vec<E::Fr> = vec![E::Fr::from(1u128), E::Fr::from(1u128), E::Fr::from(1u128)];
+    |             ^^^^^^ help: if this is intentional, prefix it with an underscore: `_coeffs`
+
+warning: unused variable: `points`
+   --> src/dft.rs:902:13
+    |
+902 |         let points: Vec<E::Fr> = vec![
+    |             ^^^^^^ help: if this is intentional, prefix it with an underscore: `_points`
+
+warning: variable does not need to be mutable
+   --> src/dft.rs:936:13
+    |
+936 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `i`
+   --> src/dft.rs:954:13
+    |
+954 |         for i in 0..npolys {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: variable does not need to be mutable
+   --> src/dft.rs:959:13
+    |
+959 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: value assigned to `status` is never read
+   --> src/kzg.rs:298:17
+    |
+298 |         let mut status: bool  = false;
+    |                 ^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: unused variable: `ptneg`
+   --> src/kzg.rs:303:13
+    |
+303 |         let ptneg = -*point;
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_ptneg`
+
+warning: unused variable: `rhs`
+   --> src/kzg.rs:305:13
+    |
+305 |         let rhs:E::G2Affine = g2x + g2.mul(-*point).into_affine();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_rhs`
+
+warning: unused variable: `lhs`
+   --> src/kzg.rs:306:13
+    |
+306 |         let lhs:E::G1Affine = *c_com + g1.mul(-*eval).into_affine();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_lhs`
+
+warning: unused variable: `pi`
+   --> src/kzg.rs:296:9
+    |
+296 |         pi: &E::G1Affine,
+    |         ^^ help: if this is intentional, prefix it with an underscore: `_pi`
+
+warning: value assigned to `res` is never read
+   --> src/multi/setup.rs:261:17
+    |
+261 |         let mut res = File::open(path.clone());
+    |                 ^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: variable does not need to be mutable
+   --> src/multi/setup.rs:297:21
+    |
+297 |                 let mut beta = E::Fr::rand(rng);
+    |                     ----^^^^
+    |                     |
+    |                     help: remove this `mut`
+
+warning: unused variable: `actual_degree`
+   --> src/multi/mod.rs:753:13
+    |
+753 |         let actual_degree = N - 1;
+    |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_actual_degree`
+
+warning: unused variable: `path`
+   --> src/multi/mod.rs:754:13
+    |
+754 |         let path = format!("/tmp/poly_openings_{}.log", E::Fq::size_in_bits());
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_path`
+
+warning: unused variable: `rng`
+   --> src/multi/mod.rs:757:13
+    |
+757 |         let rng = &mut ark_std::test_rng();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+
+warning: unused variable: `c_com`
+   --> src/multi/mod.rs:761:13
+    |
+761 |         let c_com = KZGCommit::<E>::commit_g1(&pp.poly_ck, &c_poly);
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_c_com`
+
+warning: unused variable: `openings`
+   --> src/multi/mod.rs:764:13
+    |
+764 |         let openings = KZGCommit::<E>::multiple_open::<E::G2Affine>(&c_poly, &pp.g2_powers, pp.n);
+    |             ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_openings`
+
+warning: variable does not need to be mutable
+   --> src/multi/mod.rs:760:13
+    |
+760 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `rng`
+  --> src/ramlookup/caulkplus.rs:87:13
+   |
+87 |     let mut rng = ark_std::test_rng();
+   |             ^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+
+warning: unused variable: `h_domain`
+  --> src/ramlookup/caulkplus.rs:89:9
+   |
+89 |     let h_domain: GeneralEvaluationDomain<E::Fr> = GeneralEvaluationDomain::new(1 << instance.h_domain_size).unwrap();
+   |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_h_domain`
+
+warning: unused variable: `val_s`
+   --> src/ramlookup/caulkplus.rs:156:10
+    |
+156 |     let (val_s, pi_s) = KZGCommit::<E>::open_g1_batch(
+    |          ^^^^^ help: if this is intentional, prefix it with an underscore: `_val_s`
+
+warning: variable does not need to be mutable
+  --> src/ramlookup/caulkplus.rs:87:9
+   |
+87 |     let mut rng = ark_std::test_rng();
+   |         ----^^^
+   |         |
+   |         help: remove this `mut`
+
+warning: unused variable: `i`
+   --> src/ramlookup/caulkplus.rs:488:13
+    |
+488 |         for i in 0..pp.g2_powers.len() {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `i`
+   --> src/ramlookup/caulkplus.rs:567:9
+    |
+567 |     for i in 0..pp.g2_powers.len() {
+    |         ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `i`
+   --> src/ramlookup/caulkplus.rs:602:9
+    |
+602 |     for i in 0..m {
+    |         ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `i`
+   --> src/ramlookup/caulkplus.rs:609:9
+    |
+609 |     for i in a_vec.len()..m {
+    |         ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `rng`
+   --> src/ramlookup/caulkplus.rs:635:13
+    |
+635 |     let mut rng = ark_std::test_rng();
+    |             ^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/caulkplus.rs:635:9
+    |
+635 |     let mut rng = ark_std::test_rng();
+    |         ----^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/caulkplus.rs:636:9
+    |
+636 |     let mut i_vec = example.a_vec.clone();
+    |         ----^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/caulkplus.rs:766:13
+    |
+766 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `z_i_poly`
+   --> src/ramlookup/caulkplus.rs:803:50
+    |
+803 |         let (a_poly, v_poly, t_i_poly, l_i_poly, z_i_poly, h_poly) = (
+    |                                                  ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_z_i_poly`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/caulkplus.rs:838:13
+    |
+838 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `i`
+   --> src/ramlookup/caulkplus.rs:885:13
+    |
+885 |         for i in 0usize..1000 {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `domain_size`
+   --> src/ramlookup/fastupdate.rs:355:5
+    |
+355 |     domain_size: usize,
+    |     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_domain_size`
+
+warning: unused variable: `i`
+   --> src/ramlookup/fastupdate.rs:409:13
+    |
+409 |         for i in 0..i_set.len() {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `i`
+   --> src/ramlookup/fastupdate.rs:413:13
+    |
+413 |         for i in 0..k_set.len() {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `evals_I`
+   --> src/ramlookup/fastupdate.rs:464:13
+    |
+464 |         let evals_I = compute_reciprocal_sum(&t_j_vec, &k_set, &i_set, &h_domain, h_domain_size, &mut cache);
+    |             ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_evals_I`
+
+warning: unused variable: `evals_I_naive`
+   --> src/ramlookup/fastupdate.rs:468:13
+    |
+468 |         let evals_I_naive = compute_reciprocal_sum_naive(&t_j_vec, &k_set, &i_set, &h_domain, h_domain_size);
+    |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_evals_I_naive`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/fastupdate.rs:462:13
+    |
+462 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/fastupdate.rs:467:13
+    |
+467 |         let mut start = Instant::now();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `i`
+   --> src/ramlookup/cq.rs:197:13
+    |
+197 |         for i in 0..(k - m) {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `i`
+   --> src/ramlookup/cq.rs:206:13
+    |
+206 |         for i in 0..m {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/cq.rs:238:13
+    |
+238 |         let mut i_set_vec: Vec<usize> = m_set.clone().into_iter().collect::<Vec<_>>();
+    |             ----^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `i`
+   --> src/ramlookup/cq.rs:314:13
+    |
+314 |         for i in 0..(k - m) {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/cq.rs:343:13
+    |
+343 |         let mut i_set_vec: Vec<usize> = m_set.clone().into_iter().collect::<Vec<_>>();
+    |             ----^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/cq.rs:459:13
+    |
+459 |         let mut i_set_vec: Vec<usize> = m_set.clone().into_iter().collect::<Vec<_>>();
+    |             ----^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/ramlookup/cq.rs:698:9
+    |
+698 |     let mut start = Instant::now();
+    |         ----^^^^^
+    |         |
+    |         help: remove this `mut`
+
+warning: unused variable: `i`
+    --> src/ramlookup/cq.rs:1345:13
+     |
+1345 |         for i in 0..pp.poly_ck.powers_of_g.len() {
+     |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `g2`
+    --> src/ramlookup/cq.rs:1349:13
+     |
+1349 |         let g2 = pp.g2_powers[0];
+     |             ^^ help: if this is intentional, prefix it with an underscore: `_g2`
+
+warning: unused variable: `i`
+    --> src/ramlookup/cq.rs:1435:17
+     |
+1435 |             for i in 0..pp.poly_ck.powers_of_g.len() {
+     |                 ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `o_bytes`
+    --> src/ramlookup/cq.rs:1494:21
+     |
+1494 |             let mut o_bytes = Vec::<u8>::new();
+     |                     ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_o_bytes`
+
+warning: unused variable: `h_domain_size`
+    --> src/ramlookup/cq.rs:1469:33
+     |
+1469 | fn load_table_or_new(N: &usize, h_domain_size: &usize, path: &str) -> Vec<usize> {
+     |                                 ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_h_domain_size`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:1494:17
+     |
+1494 |             let mut o_bytes = Vec::<u8>::new();
+     |                 ----^^^^^^^
+     |                 |
+     |                 help: remove this `mut`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:1552:13
+     |
+1552 |         let mut base_table: Vec<usize> = load_table_or_new(&N, &h, &path);
+     |             ----^^^^^^^^^^
+     |             |
+     |             help: remove this `mut`
+
+warning: unused variable: `rng`
+    --> src/ramlookup/cq.rs:1644:21
+     |
+1644 |             let mut rng = ark_std::test_rng();
+     |                     ^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+
+warning: unused variable: `cq_pp`
+    --> src/ramlookup/cq.rs:1666:17
+     |
+1666 |             let cq_pp: CqPublicParams<E> = CqPublicParams::load(_h_domain_size);
+     |                 ^^^^^ help: if this is intentional, prefix it with an underscore: `_cq_pp`
+
+warning: value assigned to `table_pp` is never read
+    --> src/ramlookup/cq.rs:1697:21
+     |
+1697 |                     table_pp = CqProverInput::load_by_path(&table_pp_path)
+     |                     ^^^^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:1644:17
+     |
+1644 |             let mut rng = ark_std::test_rng();
+     |                 ----^^^
+     |                 |
+     |                 help: remove this `mut`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:1675:17
+     |
+1675 |             let mut base_table: Vec<usize> = load_table_or_new(&N, &_h_domain_size, &path);
+     |                 ----^^^^^^^^^^
+     |                 |
+     |                 help: remove this `mut`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:1685:17
+     |
+1685 |             let mut start = Instant::now();
+     |                 ----^^^^^
+     |                 |
+     |                 help: remove this `mut`
+
+warning: unused variable: `cq_pp`
+    --> src/ramlookup/cq.rs:1735:21
+     |
+1735 |                 let cq_pp: CqPublicParams<E> = CqPublicParams::new(&pp, log_table_sizes[i], false);
+     |                     ^^^^^ help: if this is intentional, prefix it with an underscore: `_cq_pp`
+
+warning: unused variable: `table_pp`
+    --> src/ramlookup/cq.rs:1772:21
+     |
+1772 |                 let table_pp =
+     |                     ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_table_pp`
+
+warning: unused variable: `pos`
+    --> src/ramlookup/cq.rs:1914:29
+     |
+1914 |                         let pos = f_vec.push(
+     |                             ^^^ help: if this is intentional, prefix it with an underscore: `_pos`
+
+warning: unused variable: `proof`
+    --> src/ramlookup/cq.rs:1972:25
+     |
+1972 |                     let proof = compute_cq_proof::<E>(
+     |                         ^^^^^ help: if this is intentional, prefix it with an underscore: `_proof`
+
+warning: value assigned to `prev_lookup_time` is never read
+    --> src/ramlookup/cq.rs:1985:29
+     |
+1985 |                     let mut prev_lookup_time = 0.0 as f64;
+     |                             ^^^^^^^^^^^^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:2081:13
+     |
+2081 |         let mut base_table: Vec<usize> = load_table_or_new(&N, &_h_domain_size, &path);
+     |             ----^^^^^^^^^^
+     |             |
+     |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:2152:17
+     |
+2152 |             let mut timer_tcom = Instant::now();
+     |                 ----^^^^^^^^^^
+     |                 |
+     |                 help: remove this `mut`
+
+warning: unused variable: `g1x`
+    --> src/ramlookup/cq.rs:2261:13
+     |
+2261 |         let g1x = pp.poly_ck.powers_of_g[1];
+     |             ^^^ help: if this is intentional, prefix it with an underscore: `_g1x`
+
+warning: unused variable: `i`
+    --> src/ramlookup/cq.rs:2265:13
+     |
+2265 |         for i in 0usize..1000 {
+     |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/cq.rs:2314:13
+     |
+2314 |         let mut start = Instant::now();
+     |             ----^^^^^
+     |             |
+     |             help: remove this `mut`
+
+warning: unused variable: `i`
+  --> src/ramlookup/mod.rs:67:9
+   |
+67 |     for i in 0..vec_size {
+   |         ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: value assigned to `proof` is never read
+   --> src/ramlookup/mod.rs:320:13
+    |
+320 |     let mut proof: Option<ProofConcat<E>> = None;
+    |             ^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: unused variable: `g_com`
+   --> src/ramlookup/mod.rs:412:9
+    |
+412 |     let g_com = KZGCommit::commit_g1(&pp.poly_ck, &g_poly);
+    |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_g_com`
+
+warning: value assigned to `status` is never read
+   --> src/ramlookup/mod.rs:447:13
+    |
+447 |     let mut status: bool = false;
+    |             ^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+
+warning: unused variable: `m_domain`
+   --> src/ramlookup/mod.rs:553:13
+    |
+553 |         let m_domain = GeneralEvaluationDomain::<E::Fr>::new(m).unwrap();
+    |             ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_m_domain`
+
+warning: unused variable: `pp`
+   --> src/ramlookup/mod.rs:750:5
+    |
+750 |     pp: &PublicParameters<E>
+    |     ^^ help: if this is intentional, prefix it with an underscore: `_pp`
+
+warning: unused variable: `m_domain`
+   --> src/ramlookup/mod.rs:852:9
+    |
+852 |     let m_domain: GeneralEvaluationDomain<E::Fr> = GeneralEvaluationDomain::new(m).unwrap();
+    |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_m_domain`
+
+warning: unused variable: `val_s`
+   --> src/ramlookup/mod.rs:964:10
+    |
+964 |     let (val_s, proof_s) = KZGCommit::<E>::open_g1_batch(
+    |          ^^^^^ help: if this is intentional, prefix it with an underscore: `_val_s`
+
+warning: unused variable: `val_ws`
+   --> src/ramlookup/mod.rs:971:10
+    |
+971 |     let (val_ws, proof_ws) = KZGCommit::<E>::open_g1_batch(
+    |          ^^^^^^ help: if this is intentional, prefix it with an underscore: `_val_ws`
+
+warning: unused variable: `k_domain_size`
+    --> src/ramlookup/mod.rs:1130:13
+     |
+1130 |         let k_domain_size: usize = 9;
+     |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_k_domain_size`
+
+warning: unused variable: `proof`
+    --> src/ramlookup/mod.rs:1149:13
+     |
+1149 |         let proof = compute_monotonic_proof::<E>(
+     |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_proof`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/mod.rs:1148:13
+     |
+1148 |         let mut start = Instant::now();
+     |             ----^^^^^
+     |             |
+     |             help: remove this `mut`
+
+warning: unused variable: `rng`
+    --> src/ramlookup/mod.rs:1161:17
+     |
+1161 |         let mut rng = ark_std::test_rng();
+     |                 ^^^ help: if this is intentional, prefix it with an underscore: `_rng`
+
+warning: unused variable: `n_domain_size`
+    --> src/ramlookup/mod.rs:1165:13
+     |
+1165 |         let n_domain_size: usize = 0;
+     |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_n_domain_size`
+
+warning: unused variable: `k`
+    --> src/ramlookup/mod.rs:1169:13
+     |
+1169 |         let k: usize = 1 << k_domain_size;
+     |             ^ help: if this is intentional, prefix it with an underscore: `_k`
+
+warning: variable does not need to be mutable
+    --> src/ramlookup/mod.rs:1161:13
+     |
+1161 |         let mut rng = ark_std::test_rng();
+     |             ----^^^
+     |             |
+     |             help: remove this `mut`
+
+warning: value assigned to `cost` is never read
+    --> src/ramlookup/mod.rs:1270:17
+     |
+1270 |         let mut cost: f64 = 0.0;
+     |                 ^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: unused variable: `j`
+    --> src/ramlookup/mod.rs:1278:17
+     |
+1278 |             for j in 0..depth {
+     |                 ^ help: if this is intentional, prefix it with an underscore: `_j`
+
+warning: struct `CommittedRAM` is never constructed
+  --> src/ramlookup/mod.rs:30:12
+   |
+30 | pub struct CommittedRAM<E: PairingEngine> {
+   |            ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: struct `OperationBatch` is never constructed
+  --> src/ramlookup/mod.rs:35:12
+   |
+35 | pub struct OperationBatch<E: PairingEngine> {
+   |            ^^^^^^^^^^^^^^
+
+warning: struct `ProverInputCommon` is never constructed
+   --> src/ramlookup/mod.rs:165:12
+    |
+165 | pub struct ProverInputCommon<E: PairingEngine> {
+    |            ^^^^^^^^^^^^^^^^^
+
+warning: struct `VerifierInputCommon` is never constructed
+   --> src/ramlookup/mod.rs:175:12
+    |
+175 | pub struct VerifierInputCommon<E: PairingEngine> {
+    |            ^^^^^^^^^^^^^^^^^^^
+
+warning: multiple fields are never read
+   --> src/ramlookup/mod.rs:527:9
+    |
+526 | pub struct MonotonicTranscriptExample<E: PairingEngine> {
+    |            -------------------------- fields in this struct
+527 |     pub a_vec: Vec<usize>,
+    |         ^^^^^
+528 |     pub v_vec: Vec<usize>,
+    |         ^^^^^
+529 |     pub a_dash_vec: Vec<usize>,
+    |         ^^^^^^^^^^
+530 |     pub v_dash_vec: Vec<usize>,
+    |         ^^^^^^^^^^
+531 |     pub op_vec: Vec<usize>,
+    |         ^^^^^^
+532 |     pub a_bar_vec: Vec<usize>,
+    |         ^^^^^^^^^
+533 |     pub v_bar_vec: Vec<usize>,
+    |         ^^^^^^^^^
+...
+538 |     pub tr: RAMTranscript<E>,
+    |         ^^
+...
+541 |     pub addr_tr_com: RAMTranscriptCom<E>,
+    |         ^^^^^^^^^^^
+542 |     pub m_domain_size: usize,
+543 |     pub h_domain_size: usize,
+    |         ^^^^^^^^^^^^^
+
+warning: multiple fields are never read
+   --> src/ramlookup/mod.rs:703:9
+    |
+702 | pub struct ProofMonotonic<E: PairingEngine> {
+    |            -------------- fields in this struct
+703 |     pub z1_com: E::G1Affine,
+    |         ^^^^^^
+704 |     pub z2_com: E::G1Affine,
+    |         ^^^^^^
+705 |     pub delta_A_com: E::G1Affine,
+    |         ^^^^^^^^^^^
+706 |     pub delta_T_com: E::G1Affine,
+    |         ^^^^^^^^^^^
+707 |     pub q1_com: E::G1Affine,
+    |         ^^^^^^
+708 |     pub q2_com: E::G1Affine,
+    |         ^^^^^^
+709 |
+710 |     pub val_A_s: E::Fr,
+    |         ^^^^^^^
+711 |     pub val_A_ws: E::Fr,
+    |         ^^^^^^^^
+712 |     pub val_deltaA_s: E::Fr,
+    |         ^^^^^^^^^^^^
+713 |     pub val_deltaT_s: E::Fr,
+    |         ^^^^^^^^^^^^
+714 |     pub val_T_s: E::Fr,
+    |         ^^^^^^^
+715 |     pub val_T_ws: E::Fr,
+    |         ^^^^^^^^
+716 |     pub val_op_ws: E::Fr,
+    |         ^^^^^^^^^
+717 |     pub val_V_s: E::Fr,
+    |         ^^^^^^^
+718 |     pub val_V_ws: E::Fr,
+    |         ^^^^^^^^
+719 |     pub val_Q1_s: E::Fr,
+    |         ^^^^^^^^
+720 |     pub val_Q2_s: E::Fr,
+    |         ^^^^^^^^
+721 |     pub val_Z1_s: E::Fr,
+    |         ^^^^^^^^
+722 |     pub val_Z2_s: E::Fr,
+    |         ^^^^^^^^
+723 |
+724 |     pub pi_s: E::G1Affine,
+    |         ^^^^
+725 |     pub pi_ws: E::G1Affine,
+    |         ^^^^^
+726 |
+727 |     pub range_proof_A: CqProof<E>,
+    |         ^^^^^^^^^^^^^
+728 |     pub range_proof_deltaA: CqProof<E>,
+    |         ^^^^^^^^^^^^^^^^^^
+729 |     pub range_proof_deltaT: CqProof<E>,
+    |         ^^^^^^^^^^^^^^^^^^
+730 |     pub range_proof_t: CqProof<E>
+    |         ^^^^^^^^^^^^^
+
+warning: fields `set_I1` and `set_I2` are never read
+   --> src/ramlookup/mod.rs:735:9
+    |
+734 | pub struct ProofMonotonicProverInput<E: PairingEngine> {
+    |            ------------------------- fields in this struct
+735 |     pub set_I1: Vec<usize>,
+    |         ^^^^^^
+736 |     pub set_I2: Vec<usize>,
+    |         ^^^^^^
+
+warning: field `t_poly` is never read
+  --> src/ramlookup/caulkplus.rs:32:9
+   |
+30 | pub struct CaulkPlusProverInput<E: PairingEngine> {
+   |            -------------------- field in this struct
+31 |     pub t_com: E::G1Affine,                          // commitment to table
+32 |     pub t_poly: DensePolynomial<E::Fr>,             // polynomial interpolating the table on h_domain
+   |         ^^^^^^
+
+warning: method `store` is never used
+   --> src/ramlookup/caulkplus.rs:284:12
+    |
+282 | impl<E: PairingEngine> CaulkPlusProverInput<E> {
+    | ---------------------------------------------- method in this implementation
+283 |     // store the prover input in a file
+284 |     pub fn store(&self, h_domain_size: usize) {
+    |            ^^^^^
+
+warning: associated function `new` is never used
+   --> src/ramlookup/caulkplus.rs:412:12
+    |
+323 | impl<E: PairingEngine> CaulkPlusPublicParams<E> {
+    | ----------------------------------------------- associated function in this implementation
+...
+412 |     pub fn new(
+    |            ^^^
+
+warning: field `zk_dvt_poly` is never read
+  --> src/ramlookup/fastupdate.rs:12:9
+   |
+8  | pub struct UpdateParamsSetK<F: PrimeField> {
+   |            ---------------- field in this struct
+...
+12 |     pub zk_dvt_poly: DensePolynomial<F>,    // derivative of Z_K
+   |         ^^^^^^^^^^^
+
+warning: field `pi_h` is never read
+   --> src/ramlookup/cq.rs:147:9
+    |
+135 | pub struct CqProof<E: PairingEngine> {
+    |            ------- field in this struct
+...
+147 |     pub pi_h: E::G1Affine,    // evaluation proof for h(\gamma).
+    |         ^^^^
+
+warning: field `b_poly` is never read
+   --> src/ramlookup/cq.rs:751:9
+    |
+747 | pub struct CqLookupInputRound2<E: PairingEngine> {
+    |            ------------------- field in this struct
+...
+751 |     pub b_poly: DensePolynomial<E::Fr>,    // B polynomial interpolating 1/(beta + f_i)
+    |         ^^^^^^
+
+warning: field `h_poly` is never read
+   --> src/ramlookup/cq.rs:763:9
+    |
+762 | pub struct CqLookupInputRound3<E: PairingEngine> {
+    |            ------------------- field in this struct
+763 |     pub h_poly: DensePolynomial<E::Fr>, // h = B0 + \eta f + \eta^2 Q_B
+    |         ^^^^^^
+
+warning: variable `rand_A_polys` should have a snake case name
+   --> src/dft.rs:950:17
+    |
+950 |         let mut rand_A_polys: Vec<DensePolynomial<E::Fr>> = Vec::new();
+    |                 ^^^^^^^^^^^^ help: convert the identifier to snake case: `rand_a_polys`
+    |
+    = note: `#[warn(non_snake_case)]` on by default
+
+warning: variable `rand_B_polys` should have a snake case name
+   --> src/dft.rs:951:17
+    |
+951 |         let mut rand_B_polys: Vec<DensePolynomial<E::Fr>> = Vec::new();
+    |                 ^^^^^^^^^^^^ help: convert the identifier to snake case: `rand_b_polys`
+
+warning: variable `rand_C_polys` should have a snake case name
+   --> src/dft.rs:952:17
+    |
+952 |         let mut rand_C_polys: Vec<DensePolynomial<E::Fr>> = Vec::new();
+    |                 ^^^^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `rand_c_polys`
+
+warning: variable `fft_C` should have a snake case name
+   --> src/dft.rs:981:17
+    |
+981 |         let mut fft_C: Vec<E::Fr> = Vec::with_capacity(1usize << 21);
+    |                 ^^^^^ help: convert the identifier to snake case (notice the capitalization): `fft_c`
+
+warning: variable `fft_A` should have a snake case name
+   --> src/dft.rs:985:17
+    |
+985 |             let fft_A: Vec<E::Fr> = field_fft_domain(&rand_A_polys[i].coeffs, 21, &input_domain);
+    |                 ^^^^^ help: convert the identifier to snake case: `fft_a`
+
+warning: variable `fft_B` should have a snake case name
+   --> src/dft.rs:986:17
+    |
+986 |             let fft_B: Vec<E::Fr> = field_fft_domain(&rand_B_polys[i].coeffs, 21, &input_domain);
+    |                 ^^^^^ help: convert the identifier to snake case: `fft_b`
+
+warning: variable `delta_A_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:112:5
+    |
+112 |     delta_A_poly: &DensePolynomial<E::Fr>,
+    |     ^^^^^^^^^^^^ help: convert the identifier to snake case: `delta_a_poly`
+
+warning: variable `delta_T_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:113:5
+    |
+113 |     delta_T_poly: &DensePolynomial<E::Fr>,
+    |     ^^^^^^^^^^^^ help: convert the identifier to snake case: `delta_t_poly`
+
+warning: variable `dA_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:120:9
+    |
+120 |     let dA_poly:DensePolynomial<E::Fr> = compute_shifted_difference::<E>(&a_poly, k_domain_size);
+    |         ^^^^^^^ help: convert the identifier to snake case: `d_a_poly`
+
+warning: variable `dT_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:121:9
+    |
+121 |     let dT_poly: DensePolynomial<E::Fr> = compute_shifted_difference::<E>(&t_poly, k_domain_size);
+    |         ^^^^^^^ help: convert the identifier to snake case: `d_t_poly`
+
+warning: variable `dV_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:122:9
+    |
+122 |     let dV_poly: DensePolynomial<E::Fr> = compute_shifted_difference::<E>(&v_poly, k_domain_size);
+    |         ^^^^^^^ help: convert the identifier to snake case: `d_v_poly`
+
+warning: variable `dOp_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:123:9
+    |
+123 |     let dOp_poly: DensePolynomial<E::Fr> = compute_shifted_difference::<E>(&op_poly, k_domain_size);
+    |         ^^^^^^^^ help: convert the identifier to snake case: `d_op_poly`
+
+warning: variable `dA_dash_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:126:9
+    |
+126 |     let dA_dash_poly:DensePolynomial<E::Fr> = dA_poly.sub(delta_A_poly);
+    |         ^^^^^^^^^^^^ help: convert the identifier to snake case: `d_a_dash_poly`
+
+warning: variable `dT_dash_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:131:9
+    |
+131 |     let dT_dash_poly: DensePolynomial<E::Fr> = dT_poly.sub(delta_T_poly);
+    |         ^^^^^^^^^^^^ help: convert the identifier to snake case: `d_t_dash_poly`
+
+warning: variable `op_dV_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:135:9
+    |
+135 |     let op_dV_poly: DensePolynomial<E::Fr> = &op_dash_poly * &dV_poly;
+    |         ^^^^^^^^^^ help: convert the identifier to snake case: `op_d_v_poly`
+
+warning: variable `op_dV_poly` should have a snake case name
+   --> src/ramlookup/mod.rs:136:9
+    |
+136 |     let op_dV_poly = compute_scaled_polynomial::<E>(&op_dV_poly, gamma_sq);
+    |         ^^^^^^^^^^ help: convert the identifier to snake case: `op_d_v_poly`
+
+warning: variable `N_inv` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:447:13
+    |
+447 |         let N_inv = E::Fr::from(h_domain.size() as u128).inverse().unwrap();
+    |             ^^^^^ help: convert the identifier to snake case: `n_inv`
+
+warning: variable `N_inv` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:517:13
+    |
+517 |         let N_inv = E::Fr::from(h_domain.size() as u128).inverse().unwrap();
+    |             ^^^^^ help: convert the identifier to snake case: `n_inv`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:551:9
+    |
+551 |     let N: usize = t_vec.len();
+    |         ^ help: convert the identifier to snake case: `n`
+
+warning: constant `h_domain_size` should have an upper case name
+   --> src/ramlookup/caulkplus.rs:703:11
+    |
+703 |     const h_domain_size: usize = 22;
+    |           ^^^^^^^^^^^^^ help: convert the identifier to upper case: `H_DOMAIN_SIZE`
+    |
+    = note: `#[warn(non_upper_case_globals)]` on by default
+
+warning: constant `m_domain_size` should have an upper case name
+   --> src/ramlookup/caulkplus.rs:704:11
+    |
+704 |     const m_domain_size: usize = 11;
+    |           ^^^^^^^^^^^^^ help: convert the identifier to upper case: `M_DOMAIN_SIZE`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:733:13
+    |
+733 |         let N: usize = 1 << h_domain_size;
+    |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:788:13
+    |
+788 |         let N: usize = 1 << h_domain_size;
+    |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:827:13
+    |
+827 |         let N: usize = 1 << h_domain_size;
+    |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:868:13
+    |
+868 |         let N: usize = 1 << h_domain_size;
+    |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N_inv` should have a snake case name
+   --> src/ramlookup/caulkplus.rs:895:17
+    |
+895 |             let N_inv = E::Fr::from(N as u128).inverse().unwrap();
+    |                 ^^^^^ help: convert the identifier to snake case: `n_inv`
+
+warning: variable `N` should have a snake case name
+  --> src/ramlookup/fastupdate.rs:66:13
+   |
+66 |         let N = 1usize << h_domain_size;
+   |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `field_N` should have a snake case name
+  --> src/ramlookup/fastupdate.rs:67:13
+   |
+67 |         let field_N = F::from(N as u128);
+   |             ^^^^^^^ help: convert the identifier to snake case: `field_n`
+
+warning: variable `field_N1` should have a snake case name
+  --> src/ramlookup/fastupdate.rs:68:13
+   |
+68 |         let field_N1 = F::from( ((N*(N-1))/2) as u128);
+   |             ^^^^^^^^ help: convert the identifier to snake case: `field_n1`
+
+warning: variable `z_I` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:194:9
+    |
+194 |     let z_I = compute_vanishing_poly::<F>(&h_i_vec, 1);
+    |         ^^^ help: convert the identifier to snake case (notice the capitalization): `z_i`
+
+warning: variable `z_I_dvt_evals_I` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:201:9
+    |
+201 |     let z_I_dvt_evals_I = fast_poly_evaluate(zi_dvt_coeffs.as_slice(), &h_i_vec);
+    |         ^^^^^^^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `z_i_dvt_evals_i`
+
+warning: variable `z_I_evals_K` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:205:9
+    |
+205 |     let z_I_evals_K = fast_poly_evaluate_with_pp(
+    |         ^^^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `z_i_evals_k`
+
+warning: variable `c_evals_K` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:232:9
+    |
+232 |     let c_evals_K = fast_poly_evaluate_with_pp(
+    |         ^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `c_evals_k`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:269:9
+    |
+269 |     let N = domain.size();
+    |         ^ help: convert the identifier to snake case: `n`
+
+warning: variable `q_evals_K` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:284:13
+    |
+284 |     let mut q_evals_K: Vec<F> = Vec::new();
+    |             ^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `q_evals_k`
+
+warning: variable `q_dvt_evals_K` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:314:9
+    |
+314 |     let q_dvt_evals_K = fast_poly_evaluate(q_poly_dvt_coeffs.as_slice(), h_i_vec.as_slice());
+    |         ^^^^^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `q_dvt_evals_k`
+
+warning: variable `p_dvt_evals_I` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:318:13
+    |
+318 |     let mut p_dvt_evals_I: Vec<F> = Vec::new();
+    |             ^^^^^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `p_dvt_evals_i`
+
+warning: variable `fN` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:325:9
+    |
+325 |     let fN = F::from(N as u128);
+    |         ^^ help: convert the identifier to snake case: `f_n`
+
+warning: variable `fN1` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:326:9
+    |
+326 |     let fN1 = F::from((N-1) as u128).div(F::from(2u128));
+    |         ^^^ help: convert the identifier to snake case: `f_n1`
+
+warning: variable `e_evals_I` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:327:13
+    |
+327 |     let mut e_evals_I: Vec<F> = Vec::new();
+    |             ^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `e_evals_i`
+
+warning: variable `e_evals_I` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:358:13
+    |
+358 |     let mut e_evals_I: Vec<F> = Vec::new();
+    |             ^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `e_evals_i`
+
+warning: variable `evals_I` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:464:13
+    |
+464 |         let evals_I = compute_reciprocal_sum(&t_j_vec, &k_set, &i_set, &h_domain, h_domain_size, &mut cache);
+    |             ^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `evals_i`
+
+warning: variable `evals_I_naive` should have a snake case name
+   --> src/ramlookup/fastupdate.rs:468:13
+    |
+468 |         let evals_I_naive = compute_reciprocal_sum_naive(&t_j_vec, &k_set, &i_set, &h_domain, h_domain_size);
+    |             ^^^^^^^^^^^^^ help: convert the identifier to snake case (notice the capitalization): `evals_i_naive`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/cq.rs:671:9
+    |
+671 |     let N: usize = 1usize << h_domain_size;
+    |         ^ help: convert the identifier to snake case: `n`
+
+warning: structure field `sparse_A_vec` should have a snake case name
+   --> src/ramlookup/cq.rs:748:9
+    |
+748 |     pub sparse_A_vec: Vec<(usize, E::Fr)>, // sparse A polynomial
+    |         ^^^^^^^^^^^^ help: convert the identifier to snake case: `sparse_a_vec`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/cq.rs:781:9
+    |
+781 |     let N = domain.size();
+    |         ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+   --> src/ramlookup/cq.rs:865:9
+    |
+865 |     let N = h_domain.size();
+    |         ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N_inv` should have a snake case name
+    --> src/ramlookup/cq.rs:1299:21
+     |
+1299 |                 let N_inv = E::Fr::from(h_domain.size() as u128).inverse().unwrap();
+     |                     ^^^^^ help: convert the identifier to snake case: `n_inv`
+
+warning: variable `N_inv` should have a snake case name
+    --> src/ramlookup/cq.rs:1375:13
+     |
+1375 |         let N_inv = E::Fr::from(h_domain.size() as u128).inverse().unwrap();
+     |             ^^^^^ help: convert the identifier to snake case: `n_inv`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:1412:9
+     |
+1412 |     let N: usize = t_vec.len();
+     |         ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:1469:22
+     |
+1469 | fn load_table_or_new(N: &usize, h_domain_size: &usize, path: &str) -> Vec<usize> {
+     |                      ^ help: convert the identifier to snake case: `n`
+
+warning: call to `.clone()` on a reference in this situation does nothing
+    --> src/ramlookup/cq.rs:1471:30
+     |
+1471 |     let res = File::open(path.clone());
+     |                              ^^^^^^^^ help: remove this redundant call
+     |
+     = note: the type `str` does not implement `Clone`, so calling `clone` on `&str` copies the reference, which does not do anything and can be removed
+     = note: `#[warn(noop_method_call)]` on by default
+
+warning: constant `h_domain_size` should have an upper case name
+    --> src/ramlookup/cq.rs:1518:11
+     |
+1518 |     const h_domain_size: usize = 18;
+     |           ^^^^^^^^^^^^^ help: convert the identifier to upper case: `H_DOMAIN_SIZE`
+
+warning: constant `m_domain_size` should have an upper case name
+    --> src/ramlookup/cq.rs:1519:11
+     |
+1519 |     const m_domain_size: usize = 10;
+     |           ^^^^^^^^^^^^^ help: convert the identifier to upper case: `M_DOMAIN_SIZE`
+
+warning: constant `k_domain_size` should have an upper case name
+    --> src/ramlookup/cq.rs:1520:11
+     |
+1520 |     const k_domain_size: usize = 0;
+     |           ^^^^^^^^^^^^^ help: convert the identifier to upper case: `K_DOMAIN_SIZE`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:1550:13
+     |
+1550 |         let N: usize = 1usize << h;
+     |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:1583:17
+     |
+1583 |             let N = 1usize << h_domain_sizes[i];
+     |                 ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:1641:17
+     |
+1641 |             let N: usize = 1usize << h_domain_sizes[i];
+     |                 ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:2026:13
+     |
+2026 |         let N: usize = 1usize << _h_domain_size;
+     |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `K` should have a snake case name
+    --> src/ramlookup/cq.rs:2117:21
+     |
+2117 |             let mut K = 1usize << log_k;
+     |                     ^ help: convert the identifier to snake case (notice the capitalization): `k`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:2192:13
+     |
+2192 |         let N = 1usize << h_domain_size;
+     |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:2246:13
+     |
+2246 |         let N: usize = 1 << h_domain_size;
+     |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N_inv` should have a snake case name
+    --> src/ramlookup/cq.rs:2288:17
+     |
+2288 |             let N_inv = E::Fr::from(N as u128).inverse().unwrap();
+     |                 ^^^^^ help: convert the identifier to snake case: `n_inv`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/cq.rs:2303:13
+     |
+2303 |         let N: usize = 1 << h_domain_size;
+     |             ^ help: convert the identifier to snake case: `n`
+
+warning: variable `N` should have a snake case name
+    --> src/ramlookup/mod.rs:1132:13
+     |
+1132 |         let N: usize = 1 << h_domain_size;
+     |             ^ help: convert the identifier to snake case: `n`
+
+warning: `caulk` (lib test) generated 230 warnings (run `cargo fix --lib -p caulk --tests` to apply 71 suggestions)
+    Finished `release` profile [optimized] target(s) in 8.64s
+     Running unittests src/lib.rs (target/release/deps/caulk-5761a1506561317d)
+
+running 1 test
+Running setup for table size 33554432 and batch size 32
+test ramlookup::cq::tests::test_delta_lookup has been running for over 60 seconds
+time to setup powers = 2376.227517224s
+dummy pp setup takes 2417 seconds
+dummy table init takes 22 seconds
+Time to generate example for delta = 0 is 22 secs
+Time to commit t_com (excluded from lookup time) in 0ms
+Committed f_com in 0ms
+Using update = false
+Proof Generation Time for table=33554432 and batch=32 and delta=0: 0.004781239 secs
+===> Average (finish at delta=0) lookup time (without table init time) for table=33554432 and batch=32 is 0.004781239 secs
+Time to generate example for delta = 32 is 23 secs
+Time to commit t_com (excluded from lookup time) in 2ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 5 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 0 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 0 msec
+Scalar computation took 12 msec
+MSM took 3 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=32: 0.021458817 secs
+===> Average (finish at delta=32) lookup time (without table init time) for table=33554432 and batch=32 is 0.013120028 secs
+Time to generate example for delta = 64 is 23 secs
+Time to commit t_com (excluded from lookup time) in 4ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 10 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 0 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 0 msec
+Scalar computation took 18 msec
+MSM took 6 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=64: 0.030592237 secs
+===> Average (finish at delta=64) lookup time (without table init time) for table=33554432 and batch=32 is 0.020714455 secs
+Time to generate example for delta = 128 is 23 secs
+Time to commit t_com (excluded from lookup time) in 6ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 21 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 1 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 1 msec
+Scalar computation took 32 msec
+MSM took 12 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=128: 0.050262414 secs
+===> Average (finish at delta=128) lookup time (without table init time) for table=33554432 and batch=32 is 0.0318002763125 secs
+Time to generate example for delta = 256 is 24 secs
+Time to commit t_com (excluded from lookup time) in 10ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 46 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 3 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 3 msec
+Scalar computation took 64 msec
+MSM took 15 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=256: 0.085416094 secs
+===> Average (finish at delta=256) lookup time (without table init time) for table=33554432 and batch=32 is 0.05091831765625 secs
+Time to generate example for delta = 512 is 23 secs
+Time to commit t_com (excluded from lookup time) in 17ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 120 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 6 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 6 msec
+Scalar computation took 148 msec
+MSM took 26 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=512: 0.180785032 secs
+===> Average (finish at delta=512) lookup time (without table init time) for table=33554432 and batch=32 is 0.09349957998437501 secs
+Time to generate example for delta = 1024 is 24 secs
+Time to commit t_com (excluded from lookup time) in 26ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 277 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 14 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 14 msec
+Scalar computation took 327 msec
+MSM took 48 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=1024: 0.383774784 secs
+===> Average (finish at delta=1024) lookup time (without table init time) for table=33554432 and batch=32 is 0.18947560142968747 secs
+Time to generate example for delta = 2048 is 24 secs
+Time to commit t_com (excluded from lookup time) in 48ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 642 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 29 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 29 msec
+Scalar computation took 741 msec
+MSM took 69 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=2048: 0.820836039 secs
+===> Average (finish at delta=2048) lookup time (without table init time) for table=33554432 and batch=32 is 0.39759777699218746 secs
+Time to generate example for delta = 4096 is 24 secs
+Time to commit t_com (excluded from lookup time) in 89ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 1396 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 58 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 57 msec
+Scalar computation took 1582 msec
+MSM took 124 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=4096: 1.721932159 secs
+===> Average (finish at delta=4096) lookup time (without table init time) for table=33554432 and batch=32 is 0.8362508913554688 secs
+Time to generate example for delta = 8192 is 24 secs
+Time to commit t_com (excluded from lookup time) in 145ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 1
+Computed update params in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 3078 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 121 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 119 msec
+Scalar computation took 3455 msec
+MSM took 236 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=8192: 3.716415053 secs
+===> Average (finish at delta=8192) lookup time (without table init time) for table=33554432 and batch=32 is 1.779659985878906 secs
+Time to generate example for delta = 16384 is 25 secs
+Time to commit t_com (excluded from lookup time) in 259ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 6900 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 235 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 230 msec
+Scalar computation took 7626 msec
+MSM took 418 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=16384: 8.089198651 secs
+===> Average (finish at delta=16384) lookup time (without table init time) for table=33554432 and batch=32 is 3.843368567180663 secs
+Time to generate example for delta = 32768 is 25 secs
+Time to commit t_com (excluded from lookup time) in 528ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 0
+Time for divisions = 1
+Computed oracles on set I in 1 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 0
+Time for divisions = 1
+Evaluated q_dvt on I in 1 secs
+Computing a_vec over K took 15275 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 458 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 0
+Evaluating C(X) over K took 450 msec
+Scalar computation took 16691 msec
+MSM took 632 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=32768: 17.403968103 secs
+===> Average (finish at delta=32768) lookup time (without table init time) for table=33554432 and batch=32 is 8.297250085726073 secs
+Time to generate example for delta = 65536 is 25 secs
+Time to commit t_com (excluded from lookup time) in 895ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 16
+Computed update params in 21 secs
+Time for sub-products = 0
+Time for divisions = 2
+Computed oracles on set I in 3 secs
+Interpolated q polynomial in 6 secs
+Time for sub-products = 0
+Time for divisions = 2
+Evaluated q_dvt on I in 2 secs
+Computing a_vec over K took 33978 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 972 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 2 msec
+Time for divisions = 0
+Evaluating C(X) over K took 946 msec
+Scalar computation took 36944 msec
+MSM took 1268 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=65536: 38.373628271 secs
+===> Average (finish at delta=65536) lookup time (without table init time) for table=33554432 and batch=32 is 18.095583909332767 secs
+Time to generate example for delta = 131072 is 26 secs
+Time to commit t_com (excluded from lookup time) in 1576ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 37
+Computed update params in 47 secs
+Time for sub-products = 0
+Time for divisions = 5
+Computed oracles on set I in 6 secs
+Interpolated q polynomial in 13 secs
+Time for sub-products = 0
+Time for divisions = 5
+Evaluated q_dvt on I in 5 secs
+Computing a_vec over K took 74277 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 1
+Evaluating Z_I(X) over K took 1934 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 1
+Evaluating C(X) over K took 1838 msec
+Scalar computation took 80059 msec
+MSM took 2213 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=131072: 82.574413563 secs
+===> Average (finish at delta=131072) lookup time (without table init time) for table=33554432 and batch=32 is 39.28750021500306 secs
+Time to generate example for delta = 262144 is 25 secs
+Time to commit t_com (excluded from lookup time) in 3186ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 84
+Computed update params in 107 secs
+Time for sub-products = 0
+Time for divisions = 11
+Computed oracles on set I in 14 secs
+Interpolated q polynomial in 28 secs
+Time for sub-products = 0
+Time for divisions = 11
+Evaluated q_dvt on I in 11 secs
+Computing a_vec over K took 164983 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 3
+Evaluating Z_I(X) over K took 3679 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 3
+Evaluating C(X) over K took 3606 msec
+Scalar computation took 176246 msec
+MSM took 3756 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=262144: 180.622328283 secs
+===> Average (finish at delta=262144) lookup time (without table init time) for table=33554432 and batch=32 is 85.44592775389901 secs
+Time to generate example for delta = 524288 is 26 secs
+Time to commit t_com (excluded from lookup time) in 6500ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 194
+Computed update params in 242 secs
+Time for sub-products = 0
+Time for divisions = 25
+Computed oracles on set I in 32 secs
+Interpolated q polynomial in 60 secs
+Time for sub-products = 0
+Time for divisions = 24
+Evaluated q_dvt on I in 24 secs
+Computing a_vec over K took 365214 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 7
+Evaluating Z_I(X) over K took 7345 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1 msec
+Time for divisions = 7
+Evaluating C(X) over K took 7318 msec
+Scalar computation took 388203 msec
+MSM took 7575 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=524288: 397.078510599 secs
+===> Average (finish at delta=524288) lookup time (without table init time) for table=33554432 and batch=32 is 187.15147645667673 secs
+Time to generate example for delta = 1048576 is 26 secs
+Time to commit t_com (excluded from lookup time) in 12145ms
+Committed f_com in 2ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 431
+Computed update params in 535 secs
+Time for sub-products = 0
+Time for divisions = 53
+Computed oracles on set I in 67 secs
+Interpolated q polynomial in 129 secs
+Time for sub-products = 0
+Time for divisions = 54
+Evaluated q_dvt on I in 54 secs
+Computing a_vec over K took 799771 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 15
+Evaluating Z_I(X) over K took 15601 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 2 msec
+Time for divisions = 14
+Evaluating C(X) over K took 14893 msec
+Scalar computation took 846433 msec
+MSM took 14603 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=1048576: 863.693409816 secs
+===> Average (finish at delta=1048576) lookup time (without table init time) for table=33554432 and batch=32 is 408.77227832124703 secs
+Time to generate example for delta = 2097152 is 26 secs
+Time to commit t_com (excluded from lookup time) in 19932ms
+Committed f_com in 3ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 3 msec
+Time for divisions = 966
+Computed update params in 1192 secs
+Time for sub-products = 0
+Time for divisions = 112
+Computed oracles on set I in 140 secs
+Interpolated q polynomial in 276 secs
+Time for sub-products = 0
+Time for divisions = 112
+Evaluated q_dvt on I in 112 secs
+Computing a_vec over K took 1745883 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 0 msec
+Time for divisions = 29
+Evaluating Z_I(X) over K took 30009 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 2 msec
+Time for divisions = 28
+Evaluating C(X) over K took 29304 msec
+Scalar computation took 1837468 msec
+MSM took 26899 msecs
+Proof Generation Time for table=33554432 and batch=32 and delta=2097152: 1869.381693382 secs
+===> Average (finish at delta=2097152) lookup time (without table init time) for table=33554432 and batch=32 is 887.6587513564673 secs
+lookup time is too long, stop exploring more delta
+Running setup for table size 33554432 and batch size 128
+time to setup powers = 2376.895780443s
+dummy pp setup takes 2455 seconds
+dummy table init takes 22 seconds
+Time to generate example for delta = 0 is 23 secs
+Time to commit t_com (excluded from lookup time) in 0ms
+Committed f_com in 0ms
+Using update = false
+Proof Generation Time for table=33554432 and batch=128 and delta=0: 0.007481773 secs
+===> Average (finish at delta=0) lookup time (without table init time) for table=33554432 and batch=128 is 0.007481773 secs
+Time to generate example for delta = 128 is 23 secs
+Time to commit t_com (excluded from lookup time) in 6ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 28 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 1 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 1 msec
+Scalar computation took 63 msec
+MSM took 12 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=128: 0.084114965 secs
+===> Average (finish at delta=128) lookup time (without table init time) for table=33554432 and batch=128 is 0.045798369 secs
+Time to generate example for delta = 256 is 23 secs
+Time to commit t_com (excluded from lookup time) in 9ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 52 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 4 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 7 msec
+Time for divisions = 0
+Evaluating C(X) over K took 4 msec
+Scalar computation took 94 msec
+MSM took 14 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=256: 0.116811 secs
+===> Average (finish at delta=256) lookup time (without table init time) for table=33554432 and batch=128 is 0.077217680125 secs
+Time to generate example for delta = 512 is 23 secs
+Time to commit t_com (excluded from lookup time) in 17ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 14 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 126 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 9 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 10 msec
+Scalar computation took 185 msec
+MSM took 27 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=512: 0.221061904 secs
+===> Average (finish at delta=512) lookup time (without table init time) for table=33554432 and batch=128 is 0.1295927475625 secs
+Time to generate example for delta = 1024 is 24 secs
+Time to commit t_com (excluded from lookup time) in 27ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 293 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 21 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 21 msec
+Scalar computation took 388 msec
+MSM took 47 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=1024: 0.446254198 secs
+===> Average (finish at delta=1024) lookup time (without table init time) for table=33554432 and batch=128 is 0.23866265846875 secs
+Time to generate example for delta = 2048 is 25 secs
+Time to commit t_com (excluded from lookup time) in 49ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 647 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 44 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 44 msec
+Scalar computation took 810 msec
+MSM took 71 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=2048: 0.894442358 secs
+===> Average (finish at delta=2048) lookup time (without table init time) for table=33554432 and batch=128 is 0.4615084082343752 secs
+Time to generate example for delta = 4096 is 24 secs
+Time to commit t_com (excluded from lookup time) in 89ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 1404 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 87 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 86 msec
+Scalar computation took 1696 msec
+MSM took 124 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=4096: 1.838441778 secs
+===> Average (finish at delta=4096) lookup time (without table init time) for table=33554432 and batch=128 is 0.9213502335859378 secs
+Time to generate example for delta = 8192 is 25 secs
+Time to commit t_com (excluded from lookup time) in 150ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 1
+Computed update params in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 3112 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 170 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 170 msec
+Scalar computation took 3656 msec
+MSM took 223 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=8192: 3.906325696 secs
+===> Average (finish at delta=8192) lookup time (without table init time) for table=33554432 and batch=128 is 1.9049446568476598 secs
+Time to generate example for delta = 16384 is 25 secs
+Time to commit t_com (excluded from lookup time) in 259ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 6927 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 352 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 351 msec
+Scalar computation took 8014 msec
+MSM took 419 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=16384: 8.479960419 secs
+===> Average (finish at delta=16384) lookup time (without table init time) for table=33554432 and batch=128 is 4.057976737492189 secs
+Time to generate example for delta = 32768 is 25 secs
+Time to commit t_com (excluded from lookup time) in 529ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 0
+Time for divisions = 1
+Computed oracles on set I in 1 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 0
+Time for divisions = 1
+Evaluated q_dvt on I in 1 secs
+Computing a_vec over K took 15568 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 687 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 0
+Evaluating C(X) over K took 684 msec
+Scalar computation took 17668 msec
+MSM took 631 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=32768: 18.38299567 secs
+===> Average (finish at delta=32768) lookup time (without table init time) for table=33554432 and batch=128 is 8.7543983238584 secs
+Time to generate example for delta = 65536 is 25 secs
+Time to commit t_com (excluded from lookup time) in 881ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 16
+Computed update params in 21 secs
+Time for sub-products = 0
+Time for divisions = 2
+Computed oracles on set I in 3 secs
+Interpolated q polynomial in 6 secs
+Time for sub-products = 0
+Time for divisions = 2
+Evaluated q_dvt on I in 2 secs
+Computing a_vec over K took 34251 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 1
+Evaluating Z_I(X) over K took 1398 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 1
+Evaluating C(X) over K took 1391 msec
+Scalar computation took 38494 msec
+MSM took 1239 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=65536: 39.897947697 secs
+===> Average (finish at delta=65536) lookup time (without table init time) for table=33554432 and batch=128 is 18.957940351348636 secs
+Time to generate example for delta = 131072 is 25 secs
+Time to commit t_com (excluded from lookup time) in 1553ms
+Committed f_com in 7ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 37
+Computed update params in 47 secs
+Time for sub-products = 0
+Time for divisions = 5
+Computed oracles on set I in 6 secs
+Interpolated q polynomial in 12 secs
+Time for sub-products = 0
+Time for divisions = 5
+Evaluated q_dvt on I in 5 secs
+Computing a_vec over K took 74000 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 2
+Evaluating Z_I(X) over K took 2826 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 2
+Evaluating C(X) over K took 2819 msec
+Scalar computation took 82510 msec
+MSM took 2275 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=131072: 85.132024305 secs
+===> Average (finish at delta=131072) lookup time (without table init time) for table=33554432 and batch=128 is 40.7475066519087 secs
+Time to generate example for delta = 262144 is 26 secs
+Time to commit t_com (excluded from lookup time) in 3155ms
+Committed f_com in 6ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 84
+Computed update params in 106 secs
+Time for sub-products = 0
+Time for divisions = 11
+Computed oracles on set I in 14 secs
+Interpolated q polynomial in 27 secs
+Time for sub-products = 0
+Time for divisions = 11
+Evaluated q_dvt on I in 11 secs
+Computing a_vec over K took 163854 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 5
+Evaluating Z_I(X) over K took 5808 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 5
+Evaluating C(X) over K took 5689 msec
+Scalar computation took 181052 msec
+MSM took 3840 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=262144: 185.563222286 secs
+===> Average (finish at delta=262144) lookup time (without table init time) for table=33554432 and batch=128 is 88.05982464142669 secs
+Time to generate example for delta = 524288 is 25 secs
+Time to commit t_com (excluded from lookup time) in 6448ms
+Committed f_com in 7ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 192
+Computed update params in 240 secs
+Time for sub-products = 0
+Time for divisions = 24
+Computed oracles on set I in 31 secs
+Interpolated q polynomial in 59 secs
+Time for sub-products = 0
+Time for divisions = 25
+Evaluated q_dvt on I in 25 secs
+Computing a_vec over K took 363830 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 11
+Evaluating Z_I(X) over K took 11462 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 10
+Evaluating C(X) over K took 11073 msec
+Scalar computation took 397710 msec
+MSM took 7501 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=524288: 406.52118213 secs
+===> Average (finish at delta=524288) lookup time (without table init time) for table=33554432 and batch=128 is 192.06449962831712 secs
+Time to generate example for delta = 1048576 is 26 secs
+Time to commit t_com (excluded from lookup time) in 12089ms
+Committed f_com in 7ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 16 msec
+Time for divisions = 433
+Computed update params in 537 secs
+Time for sub-products = 0
+Time for divisions = 53
+Computed oracles on set I in 67 secs
+Interpolated q polynomial in 128 secs
+Time for sub-products = 0
+Time for divisions = 53
+Evaluated q_dvt on I in 53 secs
+Computing a_vec over K took 798711 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 22
+Evaluating Z_I(X) over K took 22367 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 8 msec
+Time for divisions = 21
+Evaluating C(X) over K took 22112 msec
+Scalar computation took 865940 msec
+MSM took 14448 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=1048576: 882.940351643 secs
+===> Average (finish at delta=1048576) lookup time (without table init time) for table=33554432 and batch=128 is 418.41217241663435 secs
+Time to generate example for delta = 2097152 is 27 secs
+Time to commit t_com (excluded from lookup time) in 19840ms
+Committed f_com in 7ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 15 msec
+Time for divisions = 965
+Computed update params in 1191 secs
+Time for sub-products = 0
+Time for divisions = 112
+Computed oracles on set I in 140 secs
+Interpolated q polynomial in 277 secs
+Time for sub-products = 0
+Time for divisions = 112
+Evaluated q_dvt on I in 112 secs
+Computing a_vec over K took 1746642 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 3 msec
+Time for divisions = 44
+Evaluating Z_I(X) over K took 44791 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 9 msec
+Time for divisions = 45
+Evaluating C(X) over K took 45527 msec
+Scalar computation took 1882274 msec
+MSM took 27063 msecs
+Proof Generation Time for table=33554432 and batch=128 and delta=2097152: 1914.559653243 secs
+===> Average (finish at delta=2097152) lookup time (without table init time) for table=33554432 and batch=128 is 908.5968286911332 secs
+lookup time is too long, stop exploring more delta
+Running setup for table size 33554432 and batch size 512
+time to setup powers = 2375.156372935s
+dummy pp setup takes 2461 seconds
+dummy table init takes 22 seconds
+Time to generate example for delta = 0 is 22 secs
+Time to commit t_com (excluded from lookup time) in 0ms
+Committed f_com in 0ms
+Using update = false
+Proof Generation Time for table=33554432 and batch=512 and delta=0: 0.018367557 secs
+===> Average (finish at delta=0) lookup time (without table init time) for table=33554432 and batch=512 is 0.018367557 secs
+Time to generate example for delta = 512 is 24 secs
+Time to commit t_com (excluded from lookup time) in 16ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 82 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 157 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 20 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 12 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 42 msec
+Time for divisions = 0
+Evaluating C(X) over K took 18 msec
+Scalar computation took 369 msec
+MSM took 26 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=512: 0.416211576 secs
+===> Average (finish at delta=512) lookup time (without table init time) for table=33554432 and batch=512 is 0.2172895665 secs
+Time to generate example for delta = 1024 is 24 secs
+Time to commit t_com (excluded from lookup time) in 25ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 82 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 307 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 20 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 36 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 42 msec
+Time for divisions = 0
+Evaluating C(X) over K took 42 msec
+Scalar computation took 591 msec
+MSM took 47 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=1024: 0.661033711 secs
+===> Average (finish at delta=1024) lookup time (without table init time) for table=33554432 and batch=512 is 0.408558871875 secs
+Time to generate example for delta = 2048 is 24 secs
+Time to commit t_com (excluded from lookup time) in 45ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 81 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 645 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 20 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 84 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 42 msec
+Time for divisions = 0
+Evaluating C(X) over K took 90 msec
+Scalar computation took 1071 msec
+MSM took 66 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=2048: 1.158969223 secs
+===> Average (finish at delta=2048) lookup time (without table init time) for table=33554432 and batch=512 is 0.6904011389375 secs
+Time to generate example for delta = 4096 is 25 secs
+Time to commit t_com (excluded from lookup time) in 91ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 87 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 1474 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 21 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 187 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 44 msec
+Time for divisions = 0
+Evaluating C(X) over K took 194 msec
+Scalar computation took 2222 msec
+MSM took 128 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=4096: 2.381451678 secs
+===> Average (finish at delta=4096) lookup time (without table init time) for table=33554432 and batch=512 is 1.2685083714375 secs
+Time to generate example for delta = 8192 is 25 secs
+Time to commit t_com (excluded from lookup time) in 150ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 84 msec
+Time for divisions = 1
+Computed update params in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 3145 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 20 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 380 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 43 msec
+Time for divisions = 0
+Evaluating C(X) over K took 389 msec
+Scalar computation took 4457 msec
+MSM took 228 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=8192: 4.723417584 secs
+===> Average (finish at delta=8192) lookup time (without table init time) for table=33554432 and batch=512 is 2.4470647185 secs
+Time to generate example for delta = 16384 is 25 secs
+Time to commit t_com (excluded from lookup time) in 253ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 82 msec
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 6892 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 20 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 799 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 44 msec
+Time for divisions = 0
+Evaluating C(X) over K took 807 msec
+Scalar computation took 9436 msec
+MSM took 431 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=16384: 9.927350293 secs
+===> Average (finish at delta=16384) lookup time (without table init time) for table=33554432 and batch=512 is 4.926880052789063 secs
+Time to generate example for delta = 32768 is 25 secs
+Time to commit t_com (excluded from lookup time) in 501ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 82 msec
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 0
+Time for divisions = 1
+Computed oracles on set I in 1 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 0
+Time for divisions = 1
+Evaluated q_dvt on I in 1 secs
+Computing a_vec over K took 14969 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 21 msec
+Time for divisions = 1
+Evaluating Z_I(X) over K took 1605 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 44 msec
+Time for divisions = 1
+Evaluating C(X) over K took 1622 msec
+Scalar computation took 19909 msec
+MSM took 666 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=32768: 20.675816124 secs
+===> Average (finish at delta=32768) lookup time (without table init time) for table=33554432 and batch=512 is 10.156217825296876 secs
+Time to generate example for delta = 65536 is 26 secs
+Time to commit t_com (excluded from lookup time) in 843ms
+Committed f_com in 20ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 82 msec
+Time for divisions = 16
+Computed update params in 20 secs
+Time for sub-products = 0
+Time for divisions = 2
+Computed oracles on set I in 3 secs
+Interpolated q polynomial in 6 secs
+Time for sub-products = 0
+Time for divisions = 2
+Evaluated q_dvt on I in 2 secs
+Computing a_vec over K took 33492 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 21 msec
+Time for divisions = 3
+Evaluating Z_I(X) over K took 3131 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 42 msec
+Time for divisions = 3
+Evaluating C(X) over K took 3077 msec
+Scalar computation took 42821 msec
+MSM took 1261 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=65536: 44.368180026 secs
+===> Average (finish at delta=65536) lookup time (without table init time) for table=33554432 and batch=512 is 21.38538209839454 secs
+Time to generate example for delta = 131072 is 26 secs
+Time to commit t_com (excluded from lookup time) in 1629ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 86 msec
+Time for divisions = 37
+Computed update params in 48 secs
+Time for sub-products = 0
+Time for divisions = 5
+Computed oracles on set I in 7 secs
+Interpolated q polynomial in 12 secs
+Time for sub-products = 0
+Time for divisions = 5
+Evaluated q_dvt on I in 5 secs
+Computing a_vec over K took 75120 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 20 msec
+Time for divisions = 6
+Evaluating Z_I(X) over K took 6165 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 42 msec
+Time for divisions = 6
+Evaluating C(X) over K took 6165 msec
+Scalar computation took 93680 msec
+MSM took 2263 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=131072: 96.26700056 secs
+===> Average (finish at delta=131072) lookup time (without table init time) for table=33554432 and batch=512 is 45.902168637625 secs
+Time to generate example for delta = 262144 is 25 secs
+Time to commit t_com (excluded from lookup time) in 3124ms
+Committed f_com in 20ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 84 msec
+Time for divisions = 85
+Computed update params in 107 secs
+Time for sub-products = 0
+Time for divisions = 11
+Computed oracles on set I in 15 secs
+Interpolated q polynomial in 27 secs
+Time for sub-products = 0
+Time for divisions = 11
+Evaluated q_dvt on I in 11 secs
+Computing a_vec over K took 165248 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 20 msec
+Time for divisions = 12
+Evaluating Z_I(X) over K took 12501 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 44 msec
+Time for divisions = 12
+Evaluating C(X) over K took 12938 msec
+Scalar computation took 202992 msec
+MSM took 3858 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=262144: 207.615206781 secs
+===> Average (finish at delta=262144) lookup time (without table init time) for table=33554432 and batch=512 is 98.97600539538134 secs
+Time to generate example for delta = 524288 is 26 secs
+Time to commit t_com (excluded from lookup time) in 6451ms
+Committed f_com in 22ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 91 msec
+Time for divisions = 192
+Computed update params in 240 secs
+Time for sub-products = 0
+Time for divisions = 24
+Computed oracles on set I in 32 secs
+Interpolated q polynomial in 60 secs
+Time for sub-products = 0
+Time for divisions = 25
+Evaluated q_dvt on I in 25 secs
+Computing a_vec over K took 365117 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 21 msec
+Time for divisions = 25
+Evaluating Z_I(X) over K took 25171 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 45 msec
+Time for divisions = 24
+Evaluating C(X) over K took 24982 msec
+Scalar computation took 439912 msec
+MSM took 7330 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=524288: 448.641097116 secs
+===> Average (finish at delta=524288) lookup time (without table init time) for table=33554432 and batch=512 is 213.61092288344824 secs
+Time to generate example for delta = 1048576 is 26 secs
+Time to commit t_com (excluded from lookup time) in 12123ms
+Committed f_com in 22ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 93 msec
+Time for divisions = 431
+Computed update params in 537 secs
+Time for sub-products = 0
+Time for divisions = 53
+Computed oracles on set I in 67 secs
+Interpolated q polynomial in 128 secs
+Time for sub-products = 0
+Time for divisions = 54
+Evaluated q_dvt on I in 54 secs
+Computing a_vec over K took 800276 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 21 msec
+Time for divisions = 50
+Evaluating Z_I(X) over K took 50855 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 49 msec
+Time for divisions = 49
+Evaluating C(X) over K took 50185 msec
+Scalar computation took 949655 msec
+MSM took 14657 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=1048576: 967.027918481 secs
+===> Average (finish at delta=1048576) lookup time (without table init time) for table=33554432 and batch=512 is 460.785994982254 secs
+Time to generate example for delta = 2097152 is 27 secs
+Time to commit t_com (excluded from lookup time) in 20293ms
+Committed f_com in 21ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 89 msec
+Time for divisions = 963
+Computed update params in 1189 secs
+Time for sub-products = 0
+Time for divisions = 113
+Computed oracles on set I in 142 secs
+Interpolated q polynomial in 276 secs
+Time for sub-products = 0
+Time for divisions = 112
+Evaluated q_dvt on I in 112 secs
+Computing a_vec over K took 1744493 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 21 msec
+Time for divisions = 100
+Evaluating Z_I(X) over K took 100724 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 52 msec
+Time for divisions = 101
+Evaluating C(X) over K took 101967 msec
+Scalar computation took 2044441 msec
+MSM took 26465 msecs
+Proof Generation Time for table=33554432 and batch=512 and delta=2097152: 2076.067195111 secs
+===> Average (finish at delta=2097152) lookup time (without table init time) for table=33554432 and batch=512 is 991.2344662746638 secs
+lookup time is too long, stop exploring more delta
+Running setup for table size 33554432 and batch size 2048
+time to setup powers = 2370.201736768s
+dummy pp setup takes 2497 seconds
+dummy table init takes 22 seconds
+Time to generate example for delta = 0 is 22 secs
+Time to commit t_com (excluded from lookup time) in 0ms
+Committed f_com in 0ms
+Using update = false
+Proof Generation Time for table=33554432 and batch=2048 and delta=0: 0.041949689 secs
+===> Average (finish at delta=0) lookup time (without table init time) for table=33554432 and batch=2048 is 0.041949689 secs
+Time to generate example for delta = 2048 is 24 secs
+Time to commit t_com (excluded from lookup time) in 45ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 463 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 892 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 135 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 133 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 242 msec
+Time for divisions = 0
+Evaluating C(X) over K took 250 msec
+Scalar computation took 2601 msec
+MSM took 70 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=2048: 2.7176395639999997 secs
+===> Average (finish at delta=2048) lookup time (without table init time) for table=33554432 and batch=2048 is 1.3797946264999998 secs
+Time to generate example for delta = 4096 is 24 secs
+Time to commit t_com (excluded from lookup time) in 86ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 463 msec
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 1617 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 128 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 366 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 228 msec
+Time for divisions = 0
+Evaluating C(X) over K took 572 msec
+Scalar computation took 4121 msec
+MSM took 121 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=4096: 4.296202084 secs
+===> Average (finish at delta=4096) lookup time (without table init time) for table=33554432 and batch=2048 is 2.64067804025 secs
+Time to generate example for delta = 8192 is 25 secs
+Time to commit t_com (excluded from lookup time) in 145ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 463 msec
+Time for divisions = 1
+Computed update params in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 3432 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 128 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 844 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 228 msec
+Time for divisions = 1
+Evaluating C(X) over K took 1236 msec
+Scalar computation took 7657 msec
+MSM took 224 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=8192: 7.945219778 secs
+===> Average (finish at delta=8192) lookup time (without table init time) for table=33554432 and batch=2048 is 4.6087580915 secs
+Time to generate example for delta = 16384 is 25 secs
+Time to commit t_com (excluded from lookup time) in 258ms
+Committed f_com in 0ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 462 msec
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 7152 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 132 msec
+Time for divisions = 1
+Evaluating Z_I(X) over K took 1851 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 235 msec
+Time for divisions = 2
+Evaluating C(X) over K took 2644 msec
+Scalar computation took 15018 msec
+MSM took 415 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=16384: 15.517420672 secs
+===> Average (finish at delta=16384) lookup time (without table init time) for table=33554432 and batch=2048 is 8.4066704361875 secs
+Time to generate example for delta = 32768 is 25 secs
+Time to commit t_com (excluded from lookup time) in 499ms
+Committed f_com in 58ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 473 msec
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 0
+Time for divisions = 1
+Computed oracles on set I in 1 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 0
+Time for divisions = 1
+Evaluated q_dvt on I in 1 secs
+Computing a_vec over K took 15210 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 129 msec
+Time for divisions = 3
+Evaluating Z_I(X) over K took 3917 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 255 msec
+Time for divisions = 5
+Evaluating C(X) over K took 5529 msec
+Scalar computation took 30557 msec
+MSM took 666 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=32768: 31.676446911 secs
+===> Average (finish at delta=32768) lookup time (without table init time) for table=33554432 and batch=2048 is 16.254286898828127 secs
+Time to generate example for delta = 65536 is 25 secs
+Time to commit t_com (excluded from lookup time) in 876ms
+Committed f_com in 60ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 477 msec
+Time for divisions = 16
+Computed update params in 20 secs
+Time for sub-products = 0
+Time for divisions = 2
+Computed oracles on set I in 3 secs
+Interpolated q polynomial in 5 secs
+Time for sub-products = 0
+Time for divisions = 2
+Evaluated q_dvt on I in 2 secs
+Computing a_vec over K took 33489 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 129 msec
+Time for divisions = 7
+Evaluating Z_I(X) over K took 7661 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 240 msec
+Time for divisions = 10
+Evaluating C(X) over K took 10735 msec
+Scalar computation took 62432 msec
+MSM took 1268 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=65536: 64.244789105 secs
+===> Average (finish at delta=65536) lookup time (without table init time) for table=33554432 and batch=2048 is 32.36189262680468 secs
+Time to generate example for delta = 131072 is 26 secs
+Time to commit t_com (excluded from lookup time) in 1572ms
+Committed f_com in 60ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 488 msec
+Time for divisions = 37
+Computed update params in 47 secs
+Time for sub-products = 0
+Time for divisions = 5
+Computed oracles on set I in 7 secs
+Interpolated q polynomial in 13 secs
+Time for sub-products = 0
+Time for divisions = 5
+Evaluated q_dvt on I in 5 secs
+Computing a_vec over K took 74705 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 128 msec
+Time for divisions = 15
+Evaluating Z_I(X) over K took 15737 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 269 msec
+Time for divisions = 21
+Evaluating C(X) over K took 21453 msec
+Scalar computation took 132338 msec
+MSM took 2339 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=131072: 135.376854002 secs
+===> Average (finish at delta=131072) lookup time (without table init time) for table=33554432 and batch=2048 is 66.36421671865624 secs
+Time to generate example for delta = 262144 is 26 secs
+Time to commit t_com (excluded from lookup time) in 3182ms
+Committed f_com in 58ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 498 msec
+Time for divisions = 84
+Computed update params in 106 secs
+Time for sub-products = 0
+Time for divisions = 11
+Computed oracles on set I in 15 secs
+Interpolated q polynomial in 27 secs
+Time for sub-products = 0
+Time for divisions = 11
+Evaluated q_dvt on I in 11 secs
+Computing a_vec over K took 164472 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 128 msec
+Time for divisions = 30
+Evaluating Z_I(X) over K took 30999 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 253 msec
+Time for divisions = 43
+Evaluating C(X) over K took 43185 msec
+Scalar computation took 277606 msec
+MSM took 3973 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=262144: 282.620544652 secs
+===> Average (finish at delta=262144) lookup time (without table init time) for table=33554432 and batch=2048 is 137.9690433561288 secs
+Time to generate example for delta = 524288 is 26 secs
+Time to commit t_com (excluded from lookup time) in 6220ms
+Committed f_com in 58ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 490 msec
+Time for divisions = 191
+Computed update params in 239 secs
+Time for sub-products = 0
+Time for divisions = 25
+Computed oracles on set I in 32 secs
+Interpolated q polynomial in 60 secs
+Time for sub-products = 0
+Time for divisions = 25
+Evaluated q_dvt on I in 25 secs
+Computing a_vec over K took 363413 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 132 msec
+Time for divisions = 61
+Evaluating Z_I(X) over K took 61945 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 256 msec
+Time for divisions = 87
+Evaluating C(X) over K took 87346 msec
+Scalar computation took 588884 msec
+MSM took 7499 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=524288: 598.038221404 secs
+===> Average (finish at delta=524288) lookup time (without table init time) for table=33554432 and batch=2048 is 289.45723826701743 secs
+Time to generate example for delta = 1048576 is 26 secs
+Time to commit t_com (excluded from lookup time) in 12485ms
+Committed f_com in 58ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 494 msec
+Time for divisions = 431
+Computed update params in 536 secs
+Time for sub-products = 0
+Time for divisions = 54
+Computed oracles on set I in 68 secs
+Interpolated q polynomial in 129 secs
+Time for sub-products = 0
+Time for divisions = 54
+Evaluated q_dvt on I in 54 secs
+Computing a_vec over K took 800523 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 132 msec
+Time for divisions = 124
+Evaluating Z_I(X) over K took 125095 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 262 msec
+Time for divisions = 172
+Evaluating C(X) over K took 173196 msec
+Scalar computation took 1250050 msec
+MSM took 14338 msecs
+Proof Generation Time for table=33554432 and batch=2048 and delta=1048576: 1267.301834846 secs
+===> Average (finish at delta=1048576) lookup time (without table init time) for table=33554432 and batch=2048 is 611.3904220697596 secs
+lookup time is too long, stop exploring more delta
+Running setup for table size 33554432 and batch size 8192
+time to setup powers = 2371.116980385s
+dummy pp setup takes 2527 seconds
+dummy table init takes 22 seconds
+Time to generate example for delta = 0 is 22 secs
+Time to commit t_com (excluded from lookup time) in 0ms
+Committed f_com in 0ms
+Using update = false
+Proof Generation Time for table=33554432 and batch=8192 and delta=0: 0.115587318 secs
+===> Average (finish at delta=0) lookup time (without table init time) for table=33554432 and batch=8192 is 0.115587318 secs
+Time to generate example for delta = 8192 is 24 secs
+Time to commit t_com (excluded from lookup time) in 145ms
+Committed f_com in 179ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2549 msec
+Time for divisions = 1
+Computed update params in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 1 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing a_vec over K took 4497 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 772 msec
+Time for divisions = 0
+Evaluating Z_I(X) over K took 857 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1306 msec
+Time for divisions = 1
+Evaluating C(X) over K took 1475 msec
+Scalar computation took 18188 msec
+MSM took 230 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=8192: 19.538101914 secs
+===> Average (finish at delta=8192) lookup time (without table init time) for table=33554432 and batch=8192 is 9.826844615999999 secs
+Time to generate example for delta = 16384 is 25 secs
+Time to commit t_com (excluded from lookup time) in 269ms
+Committed f_com in 189ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2672 msec
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 1
+Computed oracles on set I in 1 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 1 secs
+Computing a_vec over K took 8641 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 748 msec
+Time for divisions = 2
+Evaluating Z_I(X) over K took 2424 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1250 msec
+Time for divisions = 3
+Evaluating C(X) over K took 3477 msec
+Scalar computation took 30214 msec
+MSM took 417 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=16384: 31.803518597 secs
+===> Average (finish at delta=16384) lookup time (without table init time) for table=33554432 and batch=8192 is 19.282004521125 secs
+Time to generate example for delta = 32768 is 25 secs
+Time to commit t_com (excluded from lookup time) in 505ms
+Committed f_com in 179ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2625 msec
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 0
+Time for divisions = 1
+Computed oracles on set I in 2 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 0
+Time for divisions = 1
+Evaluated q_dvt on I in 1 secs
+Computing a_vec over K took 16665 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 751 msec
+Time for divisions = 5
+Evaluating Z_I(X) over K took 5569 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1279 msec
+Time for divisions = 7
+Evaluating C(X) over K took 7654 msec
+Scalar computation took 54132 msec
+MSM took 648 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=32768: 55.978945305 secs
+===> Average (finish at delta=32768) lookup time (without table init time) for table=33554432 and batch=8192 is 33.0975824053125 secs
+Time to generate example for delta = 65536 is 25 secs
+Time to commit t_com (excluded from lookup time) in 894ms
+Committed f_com in 189ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2740 msec
+Time for divisions = 16
+Computed update params in 21 secs
+Time for sub-products = 0
+Time for divisions = 2
+Computed oracles on set I in 4 secs
+Interpolated q polynomial in 6 secs
+Time for sub-products = 0
+Time for divisions = 2
+Evaluated q_dvt on I in 3 secs
+Computing a_vec over K took 35607 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 770 msec
+Time for divisions = 11
+Evaluating Z_I(X) over K took 11921 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1371 msec
+Time for divisions = 15
+Evaluating C(X) over K took 15763 msec
+Scalar computation took 105601 msec
+MSM took 1235 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=65536: 108.160035986 secs
+===> Average (finish at delta=65536) lookup time (without table init time) for table=33554432 and batch=8192 is 59.2141956091875 secs
+Time to generate example for delta = 131072 is 26 secs
+Time to commit t_com (excluded from lookup time) in 1577ms
+Committed f_com in 183ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2687 msec
+Time for divisions = 37
+Computed update params in 47 secs
+Time for sub-products = 0
+Time for divisions = 5
+Computed oracles on set I in 7 secs
+Interpolated q polynomial in 12 secs
+Time for sub-products = 0
+Time for divisions = 5
+Evaluated q_dvt on I in 5 secs
+Computing a_vec over K took 76050 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 750 msec
+Time for divisions = 24
+Evaluating Z_I(X) over K took 24347 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1312 msec
+Time for divisions = 31
+Evaluating C(X) over K took 31343 msec
+Scalar computation took 208694 msec
+MSM took 2229 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=131072: 212.371059644 secs
+===> Average (finish at delta=131072) lookup time (without table init time) for table=33554432 and batch=8192 is 111.36816895675001 secs
+Time to generate example for delta = 262144 is 25 secs
+Time to commit t_com (excluded from lookup time) in 3174ms
+Committed f_com in 184ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2715 msec
+Time for divisions = 84
+Computed update params in 106 secs
+Time for sub-products = 0
+Time for divisions = 12
+Computed oracles on set I in 15 secs
+Interpolated q polynomial in 28 secs
+Time for sub-products = 0
+Time for divisions = 12
+Evaluated q_dvt on I in 12 secs
+Computing a_vec over K took 165795 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 749 msec
+Time for divisions = 50
+Evaluating Z_I(X) over K took 50318 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1343 msec
+Time for divisions = 64
+Evaluating C(X) over K took 64676 msec
+Scalar computation took 428119 msec
+MSM took 3841 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=262144: 433.744072536 secs
+===> Average (finish at delta=262144) lookup time (without table init time) for table=33554432 and batch=8192 is 218.94234418659371 secs
+Time to generate example for delta = 524288 is 26 secs
+Time to commit t_com (excluded from lookup time) in 6283ms
+Committed f_com in 179ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2737 msec
+Time for divisions = 192
+Computed update params in 241 secs
+Time for sub-products = 0
+Time for divisions = 25
+Computed oracles on set I in 33 secs
+Interpolated q polynomial in 59 secs
+Time for sub-products = 0
+Time for divisions = 26
+Evaluated q_dvt on I in 26 secs
+Computing a_vec over K took 367096 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 753 msec
+Time for divisions = 101
+Evaluating Z_I(X) over K took 101417 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1368 msec
+Time for divisions = 129
+Evaluating C(X) over K took 129483 msec
+Scalar computation took 886623 msec
+MSM took 7421 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=524288: 896.417979944 secs
+===> Average (finish at delta=524288) lookup time (without table init time) for table=33554432 and batch=8192 is 443.8190051641094 secs
+Time to generate example for delta = 1048576 is 26 secs
+Time to commit t_com (excluded from lookup time) in 12340ms
+Committed f_com in 189ms
+Using update = true
+Time for divisions = 0
+Computed update params in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Computed oracles on set I in 0 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 0
+Evaluated q_dvt on I in 0 secs
+Computing b_vec over I took 2834 msec
+Time for divisions = 432
+Computed update params in 537 secs
+Time for sub-products = 0
+Time for divisions = 54
+Computed oracles on set I in 69 secs
+Interpolated q polynomial in 129 secs
+Time for sub-products = 0
+Time for divisions = 55
+Evaluated q_dvt on I in 55 secs
+Computing a_vec over K took 803775 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Evaluating Z_I'(X) over I took 732 msec
+Time for divisions = 204
+Evaluating Z_I(X) over K took 204557 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 0
+Interpolating C(X) took 1432 msec
+Time for divisions = 258
+Evaluating C(X) over K took 258973 msec
+Scalar computation took 1837915 msec
+MSM took 14548 msecs
+Proof Generation Time for table=33554432 and batch=8192 and delta=1048576: 1856.224025636 secs
+===> Average (finish at delta=1048576) lookup time (without table init time) for table=33554432 and batch=8192 is 911.9446251600466 secs
+lookup time is too long, stop exploring more delta
+Running setup for table size 33554432 and batch size 32768
+time to setup powers = 2370.747402323s
+dummy pp setup takes 2846 seconds
+dummy table init takes 22 seconds
+Time to generate example for delta = 0 is 22 secs
+Time to commit t_com (excluded from lookup time) in 0ms
+Committed f_com in 0ms
+Using update = false
+Proof Generation Time for table=33554432 and batch=32768 and delta=0: 0.445956373 secs
+===> Average (finish at delta=0) lookup time (without table init time) for table=33554432 and batch=32768 is 0.445956373 secs
+Time to generate example for delta = 32768 is 25 secs
+Time to commit t_com (excluded from lookup time) in 526ms
+Committed f_com in 644ms
+Using update = true
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 3
+Computed oracles on set I in 4 secs
+Interpolated q polynomial in 0 secs
+Time for sub-products = 0
+Time for divisions = 3
+Evaluated q_dvt on I in 4 secs
+Computing b_vec over I took 14341 msec
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 0
+Time for divisions = 3
+Computed oracles on set I in 5 secs
+Interpolated q polynomial in 3 secs
+Time for sub-products = 0
+Time for divisions = 3
+Evaluated q_dvt on I in 4 secs
+Computing a_vec over K took 24115 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Evaluating Z_I'(X) over I took 3939 msec
+Time for divisions = 4
+Evaluating Z_I(X) over K took 4851 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Interpolating C(X) took 6947 msec
+Time for divisions = 9
+Evaluating C(X) over K took 9203 msec
+Scalar computation took 166364 msec
+MSM took 634 msecs
+Proof Generation Time for table=33554432 and batch=32768 and delta=32768: 171.11776452 secs
+===> Average (finish at delta=32768) lookup time (without table init time) for table=33554432 and batch=32768 is 85.7818604465 secs
+Time to generate example for delta = 65536 is 25 secs
+Time to commit t_com (excluded from lookup time) in 854ms
+Committed f_com in 612ms
+Using update = true
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 3
+Computed oracles on set I in 4 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 3
+Evaluated q_dvt on I in 4 secs
+Computing b_vec over I took 14482 msec
+Time for divisions = 16
+Computed update params in 21 secs
+Time for sub-products = 0
+Time for divisions = 5
+Computed oracles on set I in 7 secs
+Interpolated q polynomial in 6 secs
+Time for sub-products = 0
+Time for divisions = 5
+Evaluated q_dvt on I in 5 secs
+Computing a_vec over K took 42143 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Evaluating Z_I'(X) over I took 3932 msec
+Time for divisions = 14
+Evaluating Z_I(X) over K took 14385 msec
+Time taken: 1
+Time for sub-products = 0
+Time for divisions = 3
+Interpolating C(X) took 6980 msec
+Time for divisions = 20
+Evaluating C(X) over K took 20692 msec
+Scalar computation took 274819 msec
+MSM took 1236 msecs
+Proof Generation Time for table=33554432 and batch=32768 and delta=65536: 280.211438869 secs
+===> Average (finish at delta=65536) lookup time (without table init time) for table=33554432 and batch=32768 is 169.359940364125 secs
+Time to generate example for delta = 131072 is 26 secs
+Time to commit t_com (excluded from lookup time) in 1634ms
+Committed f_com in 620ms
+Using update = true
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 3
+Computed oracles on set I in 4 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 3
+Evaluated q_dvt on I in 3 secs
+Computing b_vec over I took 14002 msec
+Time for divisions = 37
+Computed update params in 47 secs
+Time for sub-products = 0
+Time for divisions = 7
+Computed oracles on set I in 10 secs
+Interpolated q polynomial in 13 secs
+Time for sub-products = 0
+Time for divisions = 8
+Evaluated q_dvt on I in 9 secs
+Computing a_vec over K took 82966 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Evaluating Z_I'(X) over I took 4004 msec
+Time for divisions = 32
+Evaluating Z_I(X) over K took 32456 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Interpolating C(X) took 6971 msec
+Time for divisions = 43
+Evaluating C(X) over K took 43803 msec
+Scalar computation took 493961 msec
+MSM took 2225 msecs
+Proof Generation Time for table=33554432 and batch=32768 and delta=131072: 500.378068124 secs
+===> Average (finish at delta=131072) lookup time (without table init time) for table=33554432 and batch=32768 is 293.58776125875 secs
+Time to generate example for delta = 262144 is 25 secs
+Time to commit t_com (excluded from lookup time) in 3094ms
+Committed f_com in 609ms
+Using update = true
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 3
+Computed oracles on set I in 4 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 3
+Evaluated q_dvt on I in 4 secs
+Computing b_vec over I took 14282 msec
+Time for divisions = 86
+Computed update params in 108 secs
+Time for sub-products = 0
+Time for divisions = 14
+Computed oracles on set I in 19 secs
+Interpolated q polynomial in 28 secs
+Time for sub-products = 0
+Time for divisions = 14
+Evaluated q_dvt on I in 15 secs
+Computing a_vec over K took 175321 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Evaluating Z_I'(X) over I took 3994 msec
+Time for divisions = 69
+Evaluating Z_I(X) over K took 69658 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Interpolating C(X) took 7007 msec
+Time for divisions = 87
+Evaluating C(X) over K took 87639 msec
+Scalar computation took 946017 msec
+MSM took 3958 msecs
+Proof Generation Time for table=33554432 and batch=32768 and delta=262144: 954.577611416 secs
+===> Average (finish at delta=262144) lookup time (without table init time) for table=33554432 and batch=32768 is 524.7265362422501 secs
+Time to generate example for delta = 524288 is 26 secs
+Time to commit t_com (excluded from lookup time) in 6403ms
+Committed f_com in 610ms
+Using update = true
+Time for divisions = 3
+Computed update params in 4 secs
+Time for sub-products = 0
+Time for divisions = 3
+Computed oracles on set I in 4 secs
+Interpolated q polynomial in 1 secs
+Time for sub-products = 0
+Time for divisions = 2
+Evaluated q_dvt on I in 3 secs
+Computing b_vec over I took 14205 msec
+Time for divisions = 193
+Computed update params in 241 secs
+Time for sub-products = 0
+Time for divisions = 28
+Computed oracles on set I in 36 secs
+Interpolated q polynomial in 60 secs
+Time for sub-products = 0
+Time for divisions = 28
+Evaluated q_dvt on I in 29 secs
+Computing a_vec over K took 374617 msec
+Time taken: 1
+Time for sub-products = 0
+Time for divisions = 3
+Evaluating Z_I'(X) over I took 4048 msec
+Time for divisions = 141
+Evaluating Z_I(X) over K took 141627 msec
+Time taken: 0
+Time for sub-products = 0
+Time for divisions = 3
+Interpolating C(X) took 7149 msec
+Time for divisions = 176
+Evaluating C(X) over K took 176580 msec
+Scalar computation took 1853170 msec
+MSM took 7486 msecs
+Proof Generation Time for table=33554432 and batch=32768 and delta=524288: 1865.954092571 secs
+===> Average (finish at delta=524288) lookup time (without table init time) for table=33554432 and batch=32768 is 981.7364516359219 secs
+lookup time is too long, stop exploring more delta
+Running setup for table size 67108864 and batch size 65536
+time to setup powers = 4717.197678591s
+dummy pp setup takes 6978 seconds
+dummy table init takes 47 seconds
+Time to generate example for delta = 0 is 46 secs
+Time to commit t_com (excluded from lookup time) in 0ms
+Committed f_com in 0ms
+Using update = false
+Proof Generation Time for table=67108864 and batch=65536 and delta=0: 0.936383533 secs
+===> Average (finish at delta=0) lookup time (without table init time) for table=67108864 and batch=65536 is 0.936383533 secs
+Time to generate example for delta = 65536 is 52 secs
+Time to commit t_com (excluded from lookup time) in 874ms
+Committed f_com in 1145ms
+Using update = true
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 1
+Time for divisions = 7
+Computed oracles on set I in 10 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 1
+Time for divisions = 7
+Evaluated q_dvt on I in 9 secs
+Computing b_vec over I took 31835 msec
+Time for divisions = 16
+Computed update params in 21 secs
+Time for sub-products = 1
+Time for divisions = 8
+Computed oracles on set I in 12 secs
+Interpolated q polynomial in 7 secs
+Time for sub-products = 1
+Time for divisions = 8
+Evaluated q_dvt on I in 10 secs
+Computing a_vec over K took 53981 msec
+Time taken: 2
+Time for sub-products = 1
+Time for divisions = 7
+Evaluating Z_I'(X) over I took 9261 msec
+Time for divisions = 11
+Evaluating Z_I(X) over K took 11584 msec
+Time taken: 2
+Time for sub-products = 1
+Time for divisions = 7
+Interpolating C(X) took 15382 msec
+Time for divisions = 21
+Evaluating C(X) over K took 21914 msec
+Scalar computation took 560710 msec
+MSM took 1291 msecs
+Proof Generation Time for table=67108864 and batch=65536 and delta=65536: 569.495233043 secs
+===> Average (finish at delta=65536) lookup time (without table init time) for table=67108864 and batch=65536 is 285.215808288 secs
+Time to generate example for delta = 131072 is 52 secs
+Time to commit t_com (excluded from lookup time) in 1551ms
+Committed f_com in 1118ms
+Using update = true
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 1
+Time for divisions = 7
+Computed oracles on set I in 10 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 1
+Time for divisions = 7
+Evaluated q_dvt on I in 9 secs
+Computing b_vec over I took 32043 msec
+Time for divisions = 38
+Computed update params in 48 secs
+Time for sub-products = 1
+Time for divisions = 11
+Computed oracles on set I in 16 secs
+Interpolated q polynomial in 14 secs
+Time for sub-products = 1
+Time for divisions = 12
+Evaluated q_dvt on I in 14 secs
+Computing a_vec over K took 95962 msec
+Time taken: 2
+Time for sub-products = 1
+Time for divisions = 7
+Evaluating Z_I'(X) over I took 9376 msec
+Time for divisions = 34
+Evaluating Z_I(X) over K took 34386 msec
+Time taken: 2
+Time for sub-products = 1
+Time for divisions = 7
+Interpolating C(X) took 15441 msec
+Time for divisions = 47
+Evaluating C(X) over K took 47986 msec
