@@ -1513,7 +1513,7 @@ mod tests {
     use super::*;
     use ark_bls12_381::Bls12_381;
     use colored::Colorize;
-    use std::time::Instant;
+    use std::{time::Instant};
 
     const h_domain_size: usize = 18;
     const m_domain_size: usize = 10;
@@ -1784,6 +1784,7 @@ mod tests {
 
         // for each pair of (table_size, batch_size), run table init
         let mut rng = ark_std::test_rng();
+
         // let log_table_sizes: Vec<usize> = vec![20, 21, 22, 23, 24, 25, 26];
         // let log_batch_sizes: Vec<usize> = vec![10, 8, 6];
         // Result 1: already have: in major_lookup_tower_bls12_381.txt
@@ -1830,16 +1831,25 @@ mod tests {
         // ];
 
         // Result4: apr11_2_lookup_tower.txt
-        // 25: 5, 7, 9, 11, 13, 15
+        // 25: 5, 7, 9, 11, #13, 15
+
+        // Result 4: apr12_lookup_tower.txt | now kzg commit dummy is set, also stop at delta = \sqrt{batch*table}
+        // can afford to rerun everything. 
 
         let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
-            (25, vec![5, 7, 9, 11, 13, 15]),
-            (26, vec![16])
+            (20, vec![4, 10]),
+            (22, vec![6, 12]),
+            (24, vec![4, 6, 8, 10, 12, 14]), 
+            (26, vec![10, 16]),
+            (28, vec![8, 10, 12, 14, 16, 18]),  
         ];
+
+        let mut out_file = File::create("apr12_lookup_results.txt").unwrap();
 
         for i in 0..log_table_batches.len() {
             let log_table_size = log_table_batches[i].0;
             let table_size = 1usize << log_table_size;
+            let table_init_time = (table_size as f64 / 1750.0) * log_table_size as f64;
             for j in 0..log_table_batches[i].1.len() {
                 let mut timer = Instant::now();
                 let log_batch_size = log_table_batches[i].1[j];
@@ -1888,6 +1898,9 @@ mod tests {
                 //     .round() as usize;
                 let delta_shift_num = log_table_size - log_batch_size;
                 let mut lookup_times: Vec<f64> = Vec::new(); // will store the lookup gen time for each lookup
+
+                let mut old_amortized_time = 1000000000.0;
+                let mut cur_amortized_time = 0.0;
                 for d_k in 0..(delta_shift_num+1) {
                     let mut delta = 0;
                     if d_k >= 1 {
@@ -2004,10 +2017,29 @@ mod tests {
                     }
                     let avg = sum / lookup_times.len() as f64;
                     println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
-                    if lookup_time>1000.0 {
-                        println!("lookup time is too long, stop exploring more delta");
+                    cur_amortized_time = (sum + table_init_time)/lookup_times.len() as f64;
+                    println!("===> Amortized Lookup(for update) time (finish at delta={}) for table={} and batch={} is {} secs", delta, table_size, batch_size, cur_amortized_time);
+                    // if cur_amortized_time > old_amortized_time {
+                    //     println!("reached minimum");
+                    //     break;
+                    // }
+                    let cut_size = 1<<(((log_table_size-log_batch_size) as f64) / 2.0).ceil() as usize;
+                        
+                    if delta>=cut_size*batch_size {
+                        println!("delta >= sqrt(table*batch), will break");
+                        
+                        let mut cut_sum = 0.0;
+                        for i in 0..cut_size {
+                            cut_sum += lookup_times[i];
+                        }
+                        let cut_avg = cut_sum / cut_size as f64;
+                        writeln!(&mut out_file, "table_size = {}, batch_size = {}, at cut_delta={}, avg_time is = [{}], amortized time is [{}]", table_size, batch_size, cut_size*batch_size, cut_avg, cut_avg + table_init_time/cut_size as f64).unwrap();
+                        out_file.flush().unwrap();
+                        
+                        
                         break;
                     }
+                    old_amortized_time = cur_amortized_time;
                 }
                 // // average lookup time
                 // let mut sum = 0.0;

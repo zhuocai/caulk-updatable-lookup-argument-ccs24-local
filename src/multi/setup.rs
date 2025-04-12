@@ -4,9 +4,9 @@ use ark_ec::{AffineCurve, PairingEngine, ProjectiveCurve};
 use ark_ff::{PrimeField, UniformRand};
 use ark_poly::{
     univariate::DensePolynomial, EvaluationDomain, Evaluations as EvaluationsOnDomain,
-    GeneralEvaluationDomain,
+    GeneralEvaluationDomain, UVPolynomial,
 };
-use ark_poly_commit::kzg10::*;
+use ark_poly_commit::kzg10::{UniversalParams, Powers, VerifierKey, KZG10};
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};
 use ark_std::{cfg_into_iter, One, Zero};
 use ark_test_curves::pairing::Pairing;
@@ -20,6 +20,30 @@ use std::{
 };
 use ark_bls12_381::Bls12_381;
 use ark_bn254::Bn254;
+use ark_std::rand::RngCore;
+
+// my dummy kzg10 setup
+
+pub fn kzg10_setup_dummy<E: PairingEngine, R:RngCore>(
+    max_degree: usize,
+    tmp_g: E::G1Affine,
+    rng: &mut R,
+) -> UniversalParams<E> {
+    let g_rand = E::G1Projective::rand(rng);
+    let h_rand = E::G2Projective::rand(rng);
+    // let f_rand = E::Fr::rand(rng);
+    let g_rand_affine = g_rand.into_affine();
+    let h_rand_affine = h_rand.into_affine();
+    UniversalParams{
+        powers_of_g: vec![g_rand_affine; max_degree + 1],
+        powers_of_gamma_g: (vec![g_rand_affine; max_degree + 1]).into_iter().enumerate().collect(),
+        h:h_rand_affine,
+        beta_h:h_rand_affine,
+        neg_powers_of_h: vec![h_rand_affine; max_degree + 1].into_iter().enumerate().collect(),
+        prepared_h: E::G2Prepared::from(h_rand.into_affine()),
+        prepared_beta_h: E::G2Prepared::from(h_rand.into_affine()),
+    }
+}
 
 // structure of public parameters
 #[allow(non_snake_case)]
@@ -273,9 +297,10 @@ impl<E: PairingEngine> PublicParameters<E> {
             },
             Err(_) => {
                 let rng = &mut ark_std::test_rng();
+                let tmp_g = E::G1Projective::rand(rng).into_affine();
                 let now = Instant::now();
                 let srs = match dummy{
-                    true => KZG10::<E, DensePolynomial<E::Fr>>::setup(*max_degree, true, rng).unwrap(), // difficult to make it dummy
+                    true => kzg10_setup_dummy(*max_degree, tmp_g, rng), 
                     false => KZG10::<E, DensePolynomial<E::Fr>>::setup(*max_degree, true, rng).unwrap()};
                 println!("time to setup powers = {:?}", now.elapsed());
 

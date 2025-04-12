@@ -1,0 +1,6 @@
+table_size = 1024, batch_size = 16, at cut_delta=256, avg_time is = [0.0305837858125], amortized time is [0.7620123572410715]
+table_size = 1024, batch_size = 32, at cut_delta=256, avg_time is = [0.05594736731249999], amortized time is [0.7873759387410715]
+table_size = 1024, batch_size = 64, at cut_delta=512, avg_time is = [0.072058912625], amortized time is [1.534916055482143]
+table_size = 1024, batch_size = 128, at cut_delta=512, avg_time is = [0.12193534037499999], amortized time is [1.5847924832321432]
+table_size = 1048576, batch_size = 16, at cut_delta=8192, avg_time is = [0.49168746778710926], amortized time is [47.30311603921569]
+table_size = 1048576, batch_size = 1024, at cut_delta=65536, avg_time is = [7.278433867312501], amortized time is [381.76986243874114]
