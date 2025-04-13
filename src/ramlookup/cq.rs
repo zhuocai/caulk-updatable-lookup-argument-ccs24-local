@@ -1574,6 +1574,11 @@ mod tests {
         test_multi_delta_lookup::<Bls12_381>();
     }
 
+    #[test]
+    pub fn test_verification() {
+        test_verification_helper::<Bls12_381>();
+    }
+
     fn test_setup_helper<E: PairingEngine>() {
         // generate public parameters for the given h_domain_size
 
@@ -2021,9 +2026,17 @@ mod tests {
                     cur_amortized_time = (sum + table_init_time)/lookup_times.len() as f64;
                     println!("===> Amortized Lookup(for update) time (finish at delta={}) for table={} and batch={} is {} secs", delta, table_size, batch_size, cur_amortized_time);
                     if cur_amortized_time > old_amortized_time {
-                    //     println!("reached minimum");
-                    //     break;
-                    // }
+                        println!("reached minimum amortized time");
+                        // note that the optimum is the last one. 
+                        let best_size = lookup_times.len() - repeat_n;
+                        let mut cut_sum = 0.0;
+                        for i in 0..best_size {
+                            cut_sum += lookup_times[i];
+                        }
+                        let cut_avg = cut_sum / best_size as f64;
+                        writeln!(&mut out_file, "table_size = {}, batch_size = {}, at best_delta={}, avg_time is = [{}], amortized time is [{}]", table_size, batch_size, best_size*batch_size, cut_avg, cut_avg + table_init_time/best_size as f64).unwrap();
+                        break;
+                    }
                     let cut_size = 1<<(((log_table_size-log_batch_size) as f64) / 2.0).ceil() as usize;
                         
                     if false {
@@ -2050,6 +2063,124 @@ mod tests {
                 // }
                 // let avg = sum / lookup_times.len() as f64;
                 // println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
+            }
+        }
+    }
+
+    fn test_verification_helper<E:PairingEngine>() {
+        let mut rng = ark_std::test_rng();
+        println!("size of field is {}", E::Fr::size_in_bits());
+        
+        let g1aff_size = std::mem::size_of::<E::G1Affine>();
+        println!("size_of(E::G1Affine) = {}", std::mem::size_of::<E::G1Affine>());
+
+        let f_size = std::mem::size_of::<E::Fr>();
+        println!("size_of(E::Fr) = {}", std::mem::size_of::<E::Fr>());
+
+        println!("size_of(E::G1Projective) = {}", std::mem::size_of::<E::G1Projective>());
+
+        println!("size_of(E::G2Affine) = {}", std::mem::size_of::<E::G2Affine>());
+        println!("size_of(E::G2Projective) = {}", std::mem::size_of::<E::G2Projective>());
+
+        println!("size_of(E::G2Prepared) = {}", std::mem::size_of::<E::G2Prepared>());
+        println!("size_of(E::G1Prepared) = {}", std::mem::size_of::<E::G1Prepared>());
+        
+
+
+        println!("cq lookup proof size is 8*G1Affine + 4*Fr = {} bytes", 8*g1aff_size + 4*f_size);
+
+        let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
+            (6, vec![2, 4]),
+            (8, vec![2, 6]),
+            (10, vec![2, 8]),
+        ];
+        let mut out_file = File::create("apr12_ver_results.txt").unwrap();
+        for i in 0..log_table_batches.len() {
+            let log_table_size = log_table_batches[i].0;
+            let table_size = 1usize << log_table_size;
+            for j in 0..log_table_batches[i].1.len() {
+                let log_batch_size = log_table_batches[i].1[j];
+                let batch_size = 1usize << log_batch_size;
+                println!(
+                    "Running for table size {} and batch size {}",
+                    table_size, batch_size
+                );
+                // run setup
+                let mut timer = Instant::now();
+                let max_degree = table_size;
+                let pp: PublicParameters<E> = PublicParameters::setup(
+                    &max_degree,
+                    &table_size,
+                    &batch_size,
+                    &log_table_size,
+                    false,
+                );
+                println!("pp setup of size {} in {} secs", 
+                table_size, timer.elapsed().as_secs());
+
+                timer = Instant::now();
+                let cq_pp: CqPublicParams<E> = CqPublicParams::new(&pp, log_table_size, false);
+                println!(
+                    "CQ pp setup of size {} in {} secs",
+                    table_size,
+                    timer.elapsed().as_secs()
+                );
+
+                let base_table = vec![usize::rand(&mut rng); table_size];
+                timer = Instant::now();
+                let table_pp =
+                    generate_cq_table_input(&base_table, &pp, log_table_size, false, false);
+                println!(
+                    "table init takes {} seconds",
+                    timer.elapsed().as_secs()
+                );
+
+                let t_com = KZGCommit::<E>::commit_g2(&pp.g2_powers, &table_pp.t_poly);
+
+                let mut f_vec: Vec<usize> = Vec::new();
+                    let batch_block = (table_size as f64 / batch_size as f64).floor() as usize;
+                    for j in 0..batch_size {
+                        let pos = f_vec.push(
+                            base_table[usize::rand(&mut rng) % batch_block + j * batch_block],
+                        );
+                    }
+
+                let example: CqExample<E::Fr> = CqExample::new_base_cache_example(
+                    &base_table,
+                    &base_table,
+                    &f_vec,
+                    log_table_size,
+                    log_batch_size,
+                );
+
+                let f_com = KZGCommit::<E>::commit_g1(&pp.poly_ck, &example.f_poly);
+
+                let instance: CqLookupInstance<E> = CqLookupInstance {
+                    t_com,
+                    f_com,
+                    m_domain_size: log_batch_size,
+                    h_domain_size: log_table_size,
+                };
+
+                let use_update = false;
+                let proof = compute_cq_proof::<E>(
+                    &instance, &table_pp, &example, &cq_pp, &pp, use_update,
+                );
+
+                timer = Instant::now();
+                let ver_res = verify_cq_proof::<E>(&instance, &proof, &cq_pp, &pp);
+                let ver_time = timer.elapsed().as_secs_f64();
+                println!(
+                    "Verification time is {} secs",
+                    ver_time
+                );
+                writeln!(&mut out_file, "table_size = {}, batch_size = {}, ver_time = {}", table_size, batch_size, ver_time).unwrap();
+                out_file.flush().unwrap();
+
+                println!(
+                    "Verification result is {}",
+                    if ver_res { "success".green() } else { "failed".red() }
+                );
             }
         }
     }
