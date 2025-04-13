@@ -1,0 +1,2 @@
+table_size = 1048576, batch_size = 16, at cut_delta=4096, avg_time is = [0.3686181112011719], amortized time is [47.18004668262975]
+table_size = 1048576, batch_size = 1024, at cut_delta=32768, avg_time is = [6.76886990259375], amortized time is [381.26029847402236]

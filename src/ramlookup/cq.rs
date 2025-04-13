@@ -1845,7 +1845,7 @@ mod tests {
             // (28, vec![8, 10, 12, 14, 16, 18]),  
         ];
 
-        let mut out_file = File::create("apr12_lookup_results.txt").unwrap();
+        let mut out_file = File::create("apr12_lookup_results_larger_delta.txt").unwrap();
 
         for i in 0..log_table_batches.len() {
             let log_table_size = log_table_batches[i].0;
@@ -2020,13 +2020,13 @@ mod tests {
                     println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
                     cur_amortized_time = (sum + table_init_time)/lookup_times.len() as f64;
                     println!("===> Amortized Lookup(for update) time (finish at delta={}) for table={} and batch={} is {} secs", delta, table_size, batch_size, cur_amortized_time);
-                    // if cur_amortized_time > old_amortized_time {
+                    if cur_amortized_time > old_amortized_time {
                     //     println!("reached minimum");
                     //     break;
                     // }
                     let cut_size = 1<<(((log_table_size-log_batch_size) as f64) / 2.0).ceil() as usize;
                         
-                    if delta>=cut_size*batch_size {
+                    if false {
                         println!("delta >= sqrt(table*batch), will break");
                         
                         let mut cut_sum = 0.0;
