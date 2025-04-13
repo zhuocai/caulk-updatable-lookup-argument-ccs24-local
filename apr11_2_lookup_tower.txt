@@ -4506,3 +4506,57 @@ Time for divisions = 7
 Interpolating C(X) took 15441 msec
 Time for divisions = 47
 Evaluating C(X) over K took 47986 msec
+Scalar computation took 922604 msec
+MSM took 2332 msecs
+Proof Generation Time for table=67108864 and batch=65536 and delta=131072: 932.581969082 secs
+===> Average (finish at delta=131072) lookup time (without table init time) for table=67108864 and batch=65536 is 563.513046680125 secs
+Time to generate example for delta = 262144 is 53 secs
+Time to commit t_com (excluded from lookup time) in 3166ms
+Committed f_com in 1117ms
+Using update = true
+Time for divisions = 7
+Computed update params in 9 secs
+Time for sub-products = 1
+Time for divisions = 7
+Computed oracles on set I in 10 secs
+Interpolated q polynomial in 2 secs
+Time for sub-products = 1
+Time for divisions = 7
+Evaluated q_dvt on I in 8 secs
+Computing b_vec over I took 32014 msec
+Time for divisions = 85
+Computed update params in 107 secs
+Time for sub-products = 1
+Time for divisions = 18
+Computed oracles on set I in 24 secs
+Interpolated q polynomial in 29 secs
+Time for sub-products = 1
+Time for divisions = 17
+Evaluated q_dvt on I in 19 secs
+Computing a_vec over K took 185068 msec
+Time taken: 2
+Time for sub-products = 1
+Time for divisions = 7
+Evaluating Z_I'(X) over I took 9211 msec
+Time for divisions = 78
+Evaluating Z_I(X) over K took 78478 msec
+Time taken: 2
+Time for sub-products = 1
+Time for divisions = 7
+Interpolating C(X) took 15736 msec
+Time for divisions = 95
+Evaluating C(X) over K took 95713 msec
+Scalar computation took 1654279 msec
+MSM took 3782 msecs
+Proof Generation Time for table=67108864 and batch=65536 and delta=262144: 1665.99472151 secs
+===> Average (finish at delta=262144) lookup time (without table init time) for table=67108864 and batch=65536 is 977.2389930148125 secs
+lookup time is too long, stop exploring more delta
+test ramlookup::cq::tests::test_delta_lookup ... ok
+
+successes:
+
+successes:
+    ramlookup::cq::tests::test_delta_lookup
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 37 filtered out; finished in 51100.50s
+
