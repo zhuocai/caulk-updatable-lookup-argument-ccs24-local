@@ -1978,7 +1978,7 @@ mod tests {
             // (28, vec![8, 10, 12, 14, 16, 18]),  
         ];
 
-        let mut out_file = File::create("apr12_lookup_results_larger_delta.txt").unwrap();
+        let mut out_file = File::create("apr13_larger_batch.txt").unwrap();
 
         for i in 0..log_table_batches.len() {
             let log_table_size = log_table_batches[i].0;
