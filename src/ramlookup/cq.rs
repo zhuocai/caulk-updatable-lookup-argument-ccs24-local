@@ -1784,6 +1784,113 @@ mod tests {
         }
     }
 
+    fn test_benchmark_machine<E:PairingEngine>() {
+        let mut rng = ark_std::test_rng();
+        let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
+            (20, vec![10, 16]),
+            (22, vec![12, 16]),
+            (24, vec![14, 18]),
+        ];
+        let mut out_file = File::create("benchmark-machine.txt").unwrap();
+        for i in 0..log_table_batches.len() {
+            let log_table_size = log_table_batches[i].0;
+            let table_size = 1usize << log_table_size;
+            for j in 0..log_table_batches[i].1.len() {
+                let log_batch_size = log_table_batches[i].1[j];
+                let batch_size = 1usize << log_batch_size;
+                println!(
+                    "Running for table size {} and batch size {}",
+                    table_size, batch_size
+                );
+                // run setup
+                let mut timer = Instant::now();
+                let max_degree = table_size;
+                let pp: PublicParameters<E> = PublicParameters::setup(
+                    &max_degree,
+                    &table_size,
+                    &batch_size,
+                    &log_table_size,
+                    true,
+                );
+                println!("dummy pp setup of size {} in {} secs", 
+                table_size, timer.elapsed().as_secs());
+
+                timer = Instant::now();
+                let cq_pp: CqPublicParams<E> = CqPublicParams::new(&pp, log_table_size, true);
+                println!(
+                    "dummy CQ pp setup of size {} in {} secs",
+                    table_size,
+                    timer.elapsed().as_secs()
+                );
+
+                let base_table = vec![usize::rand(&mut rng); table_size];
+                timer = Instant::now();
+                let table_pp =
+                    generate_cq_table_input(&base_table, &pp, log_table_size, false, true);
+                println!(
+                    "dummy table init takes {} seconds",
+                    timer.elapsed().as_secs()
+                );
+
+                let t_com = KZGCommit::<E>::commit_g2(&pp.g2_powers, &table_pp.t_poly);
+
+                let mut f_vec: Vec<usize> = Vec::new();
+                    let batch_block = (table_size as f64 / batch_size as f64).floor() as usize;
+                    for j in 0..batch_size {
+                        let pos = f_vec.push(
+                            base_table[usize::rand(&mut rng) % batch_block + j * batch_block],
+                        );
+                    }
+
+                let example: CqExample<E::Fr> = CqExample::new_base_cache_example(
+                    &base_table,
+                    &base_table,
+                    &f_vec,
+                    log_table_size,
+                    log_batch_size,
+                );
+
+                let f_com = KZGCommit::<E>::commit_g1(&pp.poly_ck, &example.f_poly);
+
+                let instance: CqLookupInstance<E> = CqLookupInstance {
+                    t_com,
+                    f_com,
+                    m_domain_size: log_batch_size,
+                    h_domain_size: log_table_size,
+                };
+
+                let use_update = false;
+                timer = Instant::now();
+                let proof = compute_cq_proof::<E>(
+                    &instance, &table_pp, &example, &cq_pp, &pp, use_update,
+                );
+                let proof_time = timer.elapsed().as_secs_f64();
+                
+                writeln!(&mut out_file, "table_size = {}, batch_size = {}, proof_time = {}", table_size, batch_size, proof_time).unwrap();
+                out_file.flush().unwrap();
+                println!(
+                    "Proof generation time is {} secs",
+                    proof_time
+                );
+
+                timer = Instant::now();
+                let ver_res = verify_cq_proof::<E>(&instance, &proof, &cq_pp, &pp);
+                let ver_time = timer.elapsed().as_secs_f64();
+                println!(
+                    "Verification time is {} secs",
+                    ver_time
+                );
+                writeln!(&mut out_file, "table_size = {}, batch_size = {}, ver_time = {}", table_size, batch_size, ver_time).unwrap();
+                out_file.flush().unwrap();
+
+                println!(
+                    "Verification result is {}",
+                    if ver_res { "success".green() } else { "failed".red() }
+                );
+            }
+        }
+    }
+
     fn test_multi_delta_lookup<E: PairingEngine>() {
         // for each pair of (table_size, batch_size), run lookup of delta = (batch, 2*batch, ..., \sqrt{batch*table}). Store all time, also get the time to run setup again.
 
