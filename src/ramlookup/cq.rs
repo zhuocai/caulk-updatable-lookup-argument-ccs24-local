@@ -1514,6 +1514,7 @@ mod tests {
     use ark_bls12_381::Bls12_381;
     use colored::Colorize;
     use std::{time::Instant};
+    use std::io;
 
     const h_domain_size: usize = 18;
     const m_domain_size: usize = 10;
@@ -1577,6 +1578,20 @@ mod tests {
     #[test]
     pub fn test_verification() {
         test_verification_helper::<Bls12_381>();
+    }
+
+    #[test]
+    pub fn test_benchmark()
+    {
+        let mut out_filename = String::new();
+        match io::stdin().read_line(&mut out_filename) {
+            Ok(n) => {
+                println!("{} bytes read", n);
+                println!("{}", out_filename);
+                test_benchmark_machine::<Bls12_381>(&out_filename);
+            }
+            Err(error) => println!("error: {error}"),
+        }
     }
 
     fn test_setup_helper<E: PairingEngine>() {
@@ -1784,14 +1799,14 @@ mod tests {
         }
     }
 
-    fn test_benchmark_machine<E:PairingEngine>() {
+    fn test_benchmark_machine<E:PairingEngine>(file_name: &str) {
         let mut rng = ark_std::test_rng();
         let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
-            (20, vec![10, 16]),
+            (20, vec![10, 12, 16]),
             (22, vec![12, 16]),
             (24, vec![14, 18]),
         ];
-        let mut out_file = File::create("benchmark-machine.txt").unwrap();
+        let mut out_file = File::create(file_name).unwrap();
         for i in 0..log_table_batches.len() {
             let log_table_size = log_table_batches[i].0;
             let table_size = 1usize << log_table_size;
