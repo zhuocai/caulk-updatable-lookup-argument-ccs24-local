@@ -665,6 +665,7 @@ pub fn verify_cq_proof<E: PairingEngine>(
     cq_pp: &CqPublicParams<E>,
     pp: &PublicParameters<E>,
 ) -> bool {
+    let mut ver_res = true;
     let m_domain_size = instance.m_domain_size;
     let h_domain_size = instance.h_domain_size;
     let m = 1usize << m_domain_size;
@@ -700,7 +701,7 @@ pub fn verify_cq_proof<E: PairingEngine>(
         != E::pairing(proof.p_com, pp.g2_powers[0])
     {
         println!("Degree check on poly B0 failed");
-        return false;
+        ver_res = false;
     }
 
     if E::pairing(proof.a_com, instance.t_com)
@@ -710,7 +711,8 @@ pub fn verify_cq_proof<E: PairingEngine>(
         ))
     {
         println!("The poly identity for Q_A(X) failed");
-        return false;
+        // return false;
+        ver_res = false;
     }
 
     if E::pairing(
@@ -721,7 +723,8 @@ pub fn verify_cq_proof<E: PairingEngine>(
     ) != E::pairing(proof.a0_com, pp.g2_powers[1])
     {
         println!("The check A_0(X) = (A(X) - A(0))/X failed");
-        return false;
+        // return false;
+        ver_res = false;
     }
 
     let b0 = E::Fr::from(N as u128)
@@ -733,11 +736,13 @@ pub fn verify_cq_proof<E: PairingEngine>(
     let qb_gamma = qb_gamma.mul(zv_gamma.inverse().unwrap());
     if proof.h_gamma != proof.b0_gamma + proof.f_gamma.mul(eta) + qb_gamma.mul(eta.square()) {
         println!("Evaluation for h(X) failed");
-        return false;
+        // return false;
+        ver_res = false;
     }
 
     println!("Verification took {} ms", start.elapsed().as_millis());
-    true
+    // true
+    ver_res
 }
 
 pub struct CqLookupInputRound1<E: PairingEngine> {
@@ -1978,7 +1983,7 @@ mod tests {
             // (28, vec![8, 10, 12, 14, 16, 18]),  
         ];
 
-        let mut out_file = File::create("apr13_larger_batch.txt").unwrap();
+        let mut out_file = File::create("apr14_larger_batch.txt").unwrap();
 
         for i in 0..log_table_batches.len() {
             let log_table_size = log_table_batches[i].0;
@@ -2153,7 +2158,9 @@ mod tests {
                     println!("===> Average (finish at delta={}) lookup time (without table init time) for table={} and batch={} is {} secs", delta, table_size, batch_size, avg);
                     cur_amortized_time = (sum + table_init_time)/lookup_times.len() as f64;
                     println!("===> Amortized Lookup(for update) time (finish at delta={}) for table={} and batch={} is {} secs", delta, table_size, batch_size, cur_amortized_time);
-                    if cur_amortized_time > old_amortized_time {
+                    
+                    if false {
+                    // if cur_amortized_time > old_amortized_time {
                         println!("reached minimum amortized time");
                         // note that the optimum is the last one. 
                         let best_size = lookup_times.len() - repeat_n;
@@ -2166,8 +2173,9 @@ mod tests {
                         break;
                     }
                     let cut_size = 1<<(((log_table_size-log_batch_size) as f64) / 2.0).ceil() as usize;
-                        
-                    if false {
+
+                    if delta as f64 >= (table_size as f64 * batch_size as f64).sqrt() {
+                    // if false {
                         println!("delta >= sqrt(table*batch), will break");
                         
                         let mut cut_sum = 0.0;
@@ -2218,9 +2226,9 @@ mod tests {
         println!("cq lookup proof size is 8*G1Affine + 4*Fr = {} bytes", 8*g1aff_size + 4*f_size);
 
         let log_table_batches: Vec<(usize, Vec<usize>)> = vec![
-            (6, vec![2, 4]),
-            (8, vec![2, 6]),
-            (10, vec![2, 8]),
+            (16, vec![10, 14]),
+            (18, vec![12, 16]),
+            (20, vec![14, 18]),
         ];
         let mut out_file = File::create("apr12_ver_results.txt").unwrap();
         for i in 0..log_table_batches.len() {
@@ -2241,15 +2249,15 @@ mod tests {
                     &table_size,
                     &batch_size,
                     &log_table_size,
-                    false,
+                    true,
                 );
-                println!("pp setup of size {} in {} secs", 
+                println!("dummy pp setup of size {} in {} secs", 
                 table_size, timer.elapsed().as_secs());
 
                 timer = Instant::now();
-                let cq_pp: CqPublicParams<E> = CqPublicParams::new(&pp, log_table_size, false);
+                let cq_pp: CqPublicParams<E> = CqPublicParams::new(&pp, log_table_size, true);
                 println!(
-                    "CQ pp setup of size {} in {} secs",
+                    "dummy CQ pp setup of size {} in {} secs",
                     table_size,
                     timer.elapsed().as_secs()
                 );
@@ -2257,9 +2265,9 @@ mod tests {
                 let base_table = vec![usize::rand(&mut rng); table_size];
                 timer = Instant::now();
                 let table_pp =
-                    generate_cq_table_input(&base_table, &pp, log_table_size, false, false);
+                    generate_cq_table_input(&base_table, &pp, log_table_size, false, true);
                 println!(
-                    "table init takes {} seconds",
+                    "dummy table init takes {} seconds",
                     timer.elapsed().as_secs()
                 );
 
